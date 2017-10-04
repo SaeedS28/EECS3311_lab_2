@@ -113,7 +113,7 @@ void egc_init_plug (void)
 	egc_forg_table = egc_forg_table_init;
 
 	egc_system_name = "peg_solitaire";
-	egc_system_location = "/eecs/home/saeeds28/EECS3311_Labs/Lab_2/peg_solitaire/EIFGENs/peg_solitaire/W_code";
+	egc_system_location = "/cs/home/saeeds28/EECS3311_Labs/EECS3311_lab_2/peg_solitaire/EIFGENs/peg_solitaire/W_code";
 	egc_compiler_tag = 38;
 	egc_project_version = 1496688190;
 	egc_has_old_special_semantic = 0;
