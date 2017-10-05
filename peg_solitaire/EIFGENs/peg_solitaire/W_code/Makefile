@@ -1,37 +1,36 @@
-INCLUDE_PATH =  -I"C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL\library\time\spec\include"
+INCLUDE_PATH =  -I"$(ISE_LIBRARY)/library/time/spec/include"
 SHELL = /bin/sh
-CC = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/gcc"
-CPP = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/gcc"
-CFLAGS = -O0 -pipe -imacros eif_config.mingw.h -D_WIN32_WINNT=0x0500 -DWINVER=0x0500 -D_UNICODE -DUNICODE -DWIN32_LEAN_AND_MEAN   -DEIF_IEEE_BEHAVIOR -DWORKBENCH -I"C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/studio/spec/win64/include" -I. $(INCLUDE_PATH)
-CPPFLAGS = -O0 -pipe -imacros eif_config.mingw.h -D_WIN32_WINNT=0x0500 -DWINVER=0x0500 -D_UNICODE -DUNICODE -DWIN32_LEAN_AND_MEAN   -DWORKBENCH -I"C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/studio/spec/win64/include" -I. $(INCLUDE_PATH)
-LDFLAGS = 
-CCLDFLAGS =   -mconsole
-LDSHAREDFLAGS =  
-EIFLIB = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/studio/spec/win64/lib/mingw/wkbench.a"
-EIFTEMPLATES = C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/studio/config/win64/templates
-LIBS = 
-MAKE = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/msys/1.0/bin/make.exe"
-AR = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/ar"
-LD = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/ld"
-MKDEP =   --
-MV = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/msys/1.0/bin/cp"
-CP = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/msys/1.0/bin/cp"
-RANLIB = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/ranlib.exe"
-RM = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/msys/1.0/bin/rm" -f
+CC = gcc
+CPP = g++
+CFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DEIF_IEEE_BEHAVIOR -DWORKBENCH -I"/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/include" -I. $(INCLUDE_PATH)
+CPPFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DWORKBENCH -I"/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/include" -I. $(INCLUDE_PATH)
+LDFLAGS = -m elf_x86_64
+CCLDFLAGS = -m64  
+LDSHAREDFLAGS =  -m elf_x86_64 -shared -o
+EIFLIB = "/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/lib/libwkbench.a"
+EIFTEMPLATES = /cs/local/packages/Eiffel17.05/studio/config/linux-x86-64/templates
+LIBS = -lm
+MAKE = make
+AR = ar
+LD = ld
+MKDEP = \$(EIFFEL_SRC)/C/mkdep $(DPFLAGS) --
+MV = /bin/mv
+CP = /bin/cp
+RANLIB = :
+RM = /bin/rm -f
 FILE_EXIST = 
-RMDIR = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/msys/1.0/bin/rd"
-X2C = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/studio/spec/win64/bin/x2c.exe"
-SHAREDLINK = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/dllwrap"
-SHAREDLIBS = -luser32 -lws2_32 -ladvapi32 -lgdi32 -lshell32 -lmsimg32 -lcomdlg32 -luuid -lole32 -loleaut32 -lcomctl32 -lmpr -lshlwapi -lwinspool -lstdc++ 
-SHARED_SUFFIX = .dll
+RMDIR = 
+X2C = "/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/bin/x2c"
+SHAREDLINK = ld
+SHAREDLIBS = -lm
+SHARED_SUFFIX = .so
 COMMAND_MAKEFILE = 
 START_TEST = if [ ! -f finished ] ; then 
 END_TEST = ; fi 
-CREATE_TEST = "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/msys/1.0/bin/touch" finished
-PATH := C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/libexec/gcc/mingw32/3.4.2;C:\ProgramData\Oracle\Java\javapath;C:\MinGW\bin;C:\MinGW\libexec\gcc\x86_64-pc-mingw32\5.1.0;C:\Program Files\Java\jdk1.8.0_60\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microchip\xc32\v1.40\bin;C:\Program Files (x86)\Windows Live\Shared;C:\Users\Saad\AppData\Local\Microsoft\WindowsApps;C:\Users\Saad\AppData\Local\atom\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps; 
-SYSTEM_IN_DYNAMIC_LIB = peg_solitaire.dll 
+CREATE_TEST = touch finished 
+SYSTEM_IN_DYNAMIC_LIB = peg_solitaire.so 
 
-.SUFFIXES:.cpp .o 
+.SUFFIXES:.cpp .o
 
 .c.o:
 	$(CC) $(CFLAGS) -c $<
@@ -43,71 +42,63 @@ SUBDIRS = C1 C2 E1
 
 EXTERNALS = 
 
-all:: peg_solitaire.exe
-	echo done > completed.eif
+all: peg_solitaire
 
 C1/Cobj1.o: Makefile E1/estructure.h
-	cd C1 && $(START_TEST) $(MAKE) Cobj1.o $(END_TEST) && cd ..
+	cd C1 ; $(START_TEST) $(SHELL) Makefile.SH ; $(MAKE) $(END_TEST)
 
 C2/Cobj2.o: Makefile E1/estructure.h
-	cd C2 && $(START_TEST) $(MAKE) Cobj2.o $(END_TEST) && cd ..
+	cd C2 ; $(START_TEST) $(SHELL) Makefile.SH ; $(MAKE) $(END_TEST)
 
-E1/emain.o:  Makefile E1/Makefile
+E1/Makefile: E1/Makefile.SH
+	cd E1 ; $(SHELL) Makefile.SH
+
+E1/emain.o: Makefile E1/Makefile
 	$(CP) "$(EIFTEMPLATES)/emain.template" "E1/emain.c"
-	cd E1 && $(START_TEST) $(MAKE) emain.o  $(END_TEST) && cd ..
+	cd E1 ; $(MAKE) emain.o
 
-E1/eoption.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) eoption.o  $(END_TEST) && cd ..
+E1/eoption.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) eoption.o
 
-E1/epattern.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) epattern.o  $(END_TEST) && cd ..
+E1/epattern.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) epattern.o
 
-E1/efrozen.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) efrozen.o  $(END_TEST) && cd ..
+E1/efrozen.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) efrozen.o
 
-E1/ecall.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) ecall.o  $(END_TEST) && cd ..
+E1/ecall.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) ecall.o
 
-E1/eplug.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) eplug.o  $(END_TEST) && cd ..
+E1/eplug.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) eplug.o
 
-E1/eskelet.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) eskelet.o  $(END_TEST) && cd ..
+E1/eskelet.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) eskelet.o
 
-E1/enames.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) enames.o  $(END_TEST) && cd ..
+E1/enames.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) enames.o
 
-E1/evisib.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) evisib.o  $(END_TEST) && cd ..
+E1/evisib.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) evisib.o
 
-E1/ececil.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) ececil.o  $(END_TEST) && cd ..
+E1/ececil.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) ececil.o
 
-E1/einit.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) einit.o  $(END_TEST) && cd ..
+E1/einit.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) einit.o
 
-E1/eparents.o : Makefile E1/Makefile E1/estructure.h
-	cd E1 && $(START_TEST) $(MAKE) eparents.o  $(END_TEST) && cd ..
+E1/eparents.o: Makefile E1/Makefile E1/estructure.h
+	cd E1 ; $(MAKE) eparents.o
 
-OBJECTS = E1/eparents.o  E1/einit.o  E1/ececil.o  E1/evisib.o  E1/enames.o  E1/eskelet.o  E1/eplug.o  E1/ecall.o  E1/efrozen.o  E1/epattern.o  E1/eoption.o  C2/Cobj2.o C1/Cobj1.o 
+OBJECTS= C2/Cobj2.o C1/Cobj1.o  E1/eoption.o E1/epattern.o E1/efrozen.o E1/ecall.o E1/eplug.o E1/eskelet.o E1/enames.o E1/evisib.o E1/ececil.o E1/einit.o E1/eparents.o
 
-C_OBJECTS = C2/Cobj2.o C1/Cobj1.o 
-
-EOBJECTS = E1/eparents.o  E1/einit.o  E1/ececil.o  E1/evisib.o  E1/enames.o  E1/eskelet.o  E1/eplug.o  E1/ecall.o  E1/efrozen.o  E1/epattern.o  E1/eoption.o  
-
-PRECOMP_OBJECTS= "c:\users\saad\documents\eiffel user files\17.05\precomp\spec\win64\EIFGENs\base-safe\W_code/mingw/precomp.lib"
+PRECOMP_OBJECTS= "/cs/local/packages/Eiffel17.05/precomp/spec/linux-x86-64/EIFGENs/base-safe/W_code/preobj.o"
 
 
-peg_solitaire.exe: E1/emain.o $(OBJECTS) peg_solitaire.res 
-	$(COMMAND_MAKEFILE)
-	$(RM) $@
-	$(CC) $(LDFLAGS) $(CCLDFLAGS) -o peg_solitaire.exe E1/emain.o $(PRECOMP_OBJECTS) peg_solitaire.res $(OBJECTS)  $(EIFLIB) -luser32 -lws2_32 -ladvapi32 -lgdi32 -lshell32 -lmsimg32 -lcomdlg32 -luuid -lole32 -loleaut32 -lcomctl32 -lmpr -lshlwapi -lwinspool -lstdc++ $(ISE_SHAREDLIBS)
-
-../../../peg_solitaire.rc:
-	if [ ! -f ../../../peg_solitaire.rc ] ; then $(MV) "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/studio/config/win64/mingw/eiffel.rc" ../../../peg_solitaire.rc ; fi 
-
-peg_solitaire.res: ../../../peg_solitaire.rc Makefile
-	"C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/windres" --preprocessor='"C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/cpp.exe"' -I../../.. ../../../peg_solitaire.rc -O coff -o peg_solitaire.res
+peg_solitaire: $(OBJECTS)  E1/emain.o Makefile
+	$(RM) peg_solitaire
+	$(CC) -o peg_solitaire $(CFLAGS) $(CCLDFLAGS)  $(OBJECTS) E1/emain.o \
+		$(PRECOMP_OBJECTS) $(EXTERNALS) $(EIFLIB) $(LIBS)
 
 RCECIL = wmalloc.o wgarcol.o wlocal.o wexcept.o wstore.o wretrieve.o whash.o \
 	wtraverse.o whashin.o wtools.o winternal.o wplug.o wcopy.o wequal.o \
@@ -118,61 +109,38 @@ RCECIL = wmalloc.o wgarcol.o wlocal.o wexcept.o wstore.o wretrieve.o whash.o \
 	weif_threads.o wgen_conf.o weif_type_id.o wrout_obj.o weif_project.o \
 	idrs.o wposix_threads.o network.o ipc.o wmemory_analyzer.o woffset.o 
 
-
-#STATIC_CECIL PART
-STATIC_CECIL = libpeg_solitaire.o
+STATIC_CECIL = libpeg_solitaire.a
 cecil: $(STATIC_CECIL)
-$(STATIC_CECIL): $(OBJECTS)
+$(STATIC_CECIL):  $(OBJECTS) 
 	$(AR) x $(EIFLIB)
-	$(AR) rc $(STATIC_CECIL) $(OBJECTS) $(EXTERNALS) $(PRECOMP_OBJECTS) $(RCECIL)
+	$(AR) cr $(STATIC_CECIL) $(OBJECTS) $(PRECOMP_OBJECTS) $(RCECIL)
 	$(RANLIB) $(STATIC_CECIL)
-	$(RM) $(RCECIL)
+	$(RM) $(RCECIL) 
 
-
-
-#SHARED_CECIL PART
 SHARED_CECIL = libpeg_solitaire$(SHARED_SUFFIX)
 dynamic_cecil: $(SHARED_CECIL) 
-DEF_FILE= c_peg_solitaire.def 
-c_peg_solitaire.def: 
-	$(RM) $@
-	@echo LIBRARY libpeg_solitaire.dll > $@
-	@type "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/studio/config/win64/templates/cecil.def" >> $@
-
 SHARED_CECIL_OBJECT = $(OBJECTS) \
 		E1/emain.o
-SHAREDFLAGS = $(LDSHAREDFLAGS) \
-\
-	--dlltool-name "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/dlltool" \
-	--as "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/as" \
-	--def $(DEF_FILE) --output-lib c_dll_peg_solitaire.lib -o $(SHARED_CECIL)
-
-$(SHARED_CECIL): $(SHARED_CECIL_OBJECT)  $(DEF_FILE)
-	if [ -f $(SHARED_CECIL) ] ; then $(RM) $(SHARED_CECIL) ; fi
+SHAREDFLAGS = $(LDSHAREDFLAGS) $(SHARED_CECIL) 
+$(SHARED_CECIL): $(SHARED_CECIL_OBJECT) 
+	$(RM) $(SHARED_CECIL) 
 	$(SHAREDLINK) $(SHAREDFLAGS) $(SHARED_CECIL_OBJECT) $(PRECOMP_OBJECTS) $(EXTERNALS) $(EIFLIB) $(SHAREDLIBS) 
 
-#SYSTEM_IN_DYNAMIC_LIB PART
 
-DEF_FILE= peg_solitaire.def
+
 dynlib: $(SYSTEM_IN_DYNAMIC_LIB) 
 E1/egc_dynlib.o: Makefile E1/Makefile
 	$(CP) "$(EIFTEMPLATES)/egc_dynlib.template" E1/egc_dynlib.c
-	cd E1 && $(MAKE) egc_dynlib.o && cd ..
+	cd E1 ; $(MAKE) egc_dynlib.o ; cd ..
 E1/edynlib.o: Makefile E1/Makefile E1/edynlib.c 
-	cd E1 && $(MAKE) edynlib.o && cd ..
+	cd E1 ; $(MAKE) edynlib.o ; cd ..
 
 SYSTEM_IN_DYNAMIC_LIB_OBJ = $(OBJECTS) \
 		E1/edynlib.o E1/egc_dynlib.o 
-DYNLIBSHAREDFLAGS = $(LDSHAREDFLAGS) \
-\
-	--dlltool-name "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/dlltool" \
-	--as "C:\Program Files\Eiffel Software\EiffelStudio 17.05 GPL/gcc/win64/mingw/bin/as" \
-	--def $(DEF_FILE) --output-lib dll_peg_solitaire.lib -o $(SYSTEM_IN_DYNAMIC_LIB)
-
-$(SYSTEM_IN_DYNAMIC_LIB): $(SYSTEM_IN_DYNAMIC_LIB_OBJ)  $(DEF_FILE)
-	if [ -f $(SYSTEM_IN_DYNAMIC_LIB) ] ; then $(RM) $(SYSTEM_IN_DYNAMIC_LIB) ; fi
+DYNLIBSHAREDFLAGS = $(LDSHAREDFLAGS) $(SYSTEM_IN_DYNAMIC_LIB) 
+$(SYSTEM_IN_DYNAMIC_LIB): $(SYSTEM_IN_DYNAMIC_LIB_OBJ) 
+	$(RM) $(SYSTEM_IN_DYNAMIC_LIB) 
 	$(SHAREDLINK) $(DYNLIBSHAREDFLAGS) $(SYSTEM_IN_DYNAMIC_LIB_OBJ) $(PRECOMP_OBJECTS) $(EXTERNALS) $(EIFLIB) $(SHAREDLIBS) 
-
 
 
 clean: sub_clean local_clean

@@ -126,6 +126,44 @@ feature -- Constant String Representations of Boards
 	skull_board_out: STRING
 
 invariant
+
+-- First Category Invariants
+	correct_easy_board_output:
+		easy_board_out.out = "[
+				***.***
+				***O***
+				***O***
+				***.***
+				***O***
+				***.***
+				*******
+				]"
+
+	correct_easy_board_output:
+		easy_board_out.out = "[
+				*******
+				*******
+				*******
+				*******
+				*******
+				*******
+				*******
+				]"
+
+	correct_cross_board_output:
+		cross_board_out.out= "[
+				**...**
+				**.O.**
+				..OOO..
+				...O...
+				...O...
+				**...**
+				**...**
+				]"
+
+
+-- Second Category Invariants
+
 	correct_default_board_output: True
 		-- Your task.
 
