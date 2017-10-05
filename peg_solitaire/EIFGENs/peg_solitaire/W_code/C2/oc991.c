@@ -72,7 +72,10 @@ EIF_TYPED_VALUE F991_7392 (EIF_REFERENCE Current)
 	GTCX
 	char *l_feature_name = "out";
 	RTEX;
+	EIF_TYPED_VALUE ur1x = {{0}, SK_REF};
+#define ur1 ur1x.it_r
 	EIF_REFERENCE tr1 = NULL;
+	EIF_BOOLEAN tb1;
 	EIF_REFERENCE Result = ((EIF_REFERENCE) 0);
 	
 	RTCDT;
@@ -80,11 +83,12 @@ EIF_TYPED_VALUE F991_7392 (EIF_REFERENCE Current)
 	RTDA;
 	RTLD;
 	
-	RTLI(3);
+	RTLI(4);
 	RTLR(0,tr1);
 	RTLR(1,Result);
-	RTLR(2,Current);
-	RTLIU(3);
+	RTLR(2,ur1);
+	RTLR(3,Current);
+	RTLIU(4);
 	RTLU (SK_REF, &Result);
 	RTLU (SK_REF, &Current);
 	
@@ -101,25 +105,38 @@ EIF_TYPED_VALUE F991_7392 (EIF_REFERENCE Current)
 	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4556, Dtype(tr1)))(tr1);
 	RTNHOOK(1,1);
 	Result = (EIF_REFERENCE) RTCCL(tr1);
+	RTHOOK(2);
+	RTDBGAL(Current, 0, 0xF80000E7, 0,0); /* Result */
+	Result = RTMS_EX_H("0",1,48);
 	if (RTAL & CK_ENSURE) {
-		RTHOOK(2);
+		RTHOOK(3);
 		RTCT("out_not_void", EX_POST);
 		if ((EIF_BOOLEAN)(Result != NULL)) {
 			RTCK;
 		} else {
 			RTCF;
 		}
-		RTHOOK(3);
+		RTHOOK(4);
+		RTCT("correct_result", EX_POST);
+		tr1 = RTMS_EX_H("0",1,48);
+		ur1 = tr1;
+		tb1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(11, "is_equal", Result))(Result, ur1x)).it_b);
+		if (tb1) {
+			RTCK;
+		} else {
+			RTCF;
+		}
 	}
 	RTVI(Current, RTAL);
 	RTRS;
-	RTHOOK(4);
+	RTHOOK(5);
 	RTDBGLE;
 	RTMD(0);
 	RTLE;
 	RTLO(2);
 	RTEE;
 	{ EIF_TYPED_VALUE r; r.type = SK_REF; r.it_r = Result; return r; }
+#undef ur1
 }
 
 void EIF_Minit991 (void)

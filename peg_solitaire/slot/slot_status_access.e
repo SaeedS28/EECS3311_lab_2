@@ -11,28 +11,23 @@ feature -- Accesses
 	unavailable_slot: UNAVAILABLE_SLOT
 			-- Return the unavailable status of a slot.
 		do
-			-- Your task: the current implementation
-			-- may not be correct.
 			create Result.make
 		end
 
 	occupied_slot: OCCUPIED_SLOT
 			-- Return the occupied status of a slot.
 		do
-			-- Your task: the current implementation
-			-- may not be correct.
 			create Result.make
 		end
 
 	unoccupied_slot: UNOCCUPIED_SLOT
 			-- Return the unoccupied status of a slot.
 		do
-			-- Your task: the current implementation
-			-- may not be correct.
 			create Result.make
 		end
 
 invariant
-	singleton_slot_statuses: True
-		-- Your task.
+	singleton_slot_statuses:
+		unavailable_slot=unavailable_slot and unoccupied_slot=unoccupied_slot
+		and occupied_slot=occupied_slot
 end

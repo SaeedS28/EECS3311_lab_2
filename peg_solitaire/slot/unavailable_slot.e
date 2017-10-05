@@ -27,10 +27,9 @@ feature -- Output
 			-- String representation of current slot.
 		do
 			create Result.make_empty
-			-- Your task: the current implementation
-			-- may not be correct.
+			Result:= "*"
 		ensure then
-			correct_result: True
+			correct_result: Result.is_equal ("*")
 				-- Your task.
 		end
 end

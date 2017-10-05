@@ -26,7 +26,7 @@ static const EIF_TYPE_INDEX egt_13_997 [] = {0xFF01,51,0xFFFF};
 static const EIF_TYPE_INDEX egt_14_997 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_15_997 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_16_997 [] = {0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_17_997 [] = {0xFF01,345,0xFF01,0xFFF9,0,185,0xFFFF};
+static const EIF_TYPE_INDEX egt_17_997 [] = {0xFF01,370,0xFF01,0xFFF9,0,185,0xFFFF};
 
 
 static const struct desc_info desc_997[] = {
@@ -138,9 +138,9 @@ void Init997(void)
 {
 	IDSC(desc_997, 0, 996);
 	IDSC(desc_997 + 1, 1, 996);
-	IDSC(desc_997 + 32, 189, 996);
-	IDSC(desc_997 + 65, 230, 996);
-	IDSC(desc_997 + 66, 101, 996);
+	IDSC(desc_997 + 32, 190, 996);
+	IDSC(desc_997 + 65, 229, 996);
+	IDSC(desc_997 + 66, 103, 996);
 	IDSC(desc_997 + 91, 370, 996);
 }
 

@@ -141,12 +141,12 @@ void Init1000(void)
 {
 	IDSC(desc_1000, 0, 999);
 	IDSC(desc_1000 + 1, 1, 999);
-	IDSC(desc_1000 + 32, 209, 999);
+	IDSC(desc_1000 + 32, 210, 999);
 	IDSC(desc_1000 + 36, 393, 999);
 	IDSC(desc_1000 + 39, 405, 999);
 	IDSC(desc_1000 + 44, 406, 999);
 	IDSC(desc_1000 + 48, 403, 999);
-	IDSC(desc_1000 + 54, 123, 999);
+	IDSC(desc_1000 + 54, 125, 999);
 	IDSC(desc_1000 + 59, 32, 999);
 	IDSC(desc_1000 + 73, 389, 999);
 	IDSC(desc_1000 + 92, 402, 999);
