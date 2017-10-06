@@ -72,7 +72,7 @@ void F996_7416 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x, EIF_TYPED_VALUE ar
 	RTDBGEAA(995, Current, 13661);
 	RTCC(arg1, 995, l_feature_name, 1, eif_new_type(231, 0x01), 0x01);
 	{
-		static EIF_TYPE_INDEX typarr0[] = {0xFF01,255,0xFF01,0xFFF9,0,185,0xFFFF};
+		static EIF_TYPE_INDEX typarr0[] = {0xFF01,257,0xFF01,0xFFF9,0,185,0xFFFF};
 		EIF_TYPE typres0;
 		static EIF_TYPE typcache0 = {INVALID_DTYPE, 0};
 		
@@ -82,7 +82,7 @@ void F996_7416 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x, EIF_TYPED_VALUE ar
 	RTIV(Current, RTAL);
 body:;
 	RTHOOK(1);
-	RTDBGAA(Current, dtype, 5217, 0xF80000FF, 0); /* case */
+	RTDBGAA(Current, dtype, 5217, 0xF8000101, 0); /* case */
 	RTAR(Current, arg2);
 	*(EIF_REFERENCE *)(Current + RTWA(5217, dtype)) = (EIF_REFERENCE) RTCCL(arg2);
 	RTHOOK(2);
@@ -174,7 +174,7 @@ void F996_7417 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x, EIF_TYPED_VALUE ar
 	RTDBGEAA(995, Current, 13662);
 	RTCC(arg1, 995, l_feature_name, 1, eif_new_type(231, 0x01), 0x01);
 	{
-		static EIF_TYPE_INDEX typarr0[] = {0xFF01,255,0xFF01,0xFFF9,0,185,0xFFFF};
+		static EIF_TYPE_INDEX typarr0[] = {0xFF01,257,0xFF01,0xFFF9,0,185,0xFFFF};
 		EIF_TYPE typres0;
 		static EIF_TYPE typcache0 = {INVALID_DTYPE, 0};
 		
@@ -198,7 +198,7 @@ label_1:
 	}
 body:;
 	RTHOOK(3);
-	RTDBGAA(Current, dtype, 5217, 0xF80000FF, 0); /* case */
+	RTDBGAA(Current, dtype, 5217, 0xF8000101, 0); /* case */
 	RTAR(Current, arg2);
 	*(EIF_REFERENCE *)(Current + RTWA(5217, dtype)) = (EIF_REFERENCE) RTCCL(arg2);
 	RTHOOK(4);

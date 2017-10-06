@@ -127,31 +127,32 @@ feature -- Constant String Representations of Boards
 
 invariant
 
--- First Category Invariants
-	correct_easy_board_output:
-		easy_board_out.out = "[
-				***.***
-				***O***
-				***O***
-				***.***
-				***O***
-				***.***
+-- First Category Invariants. Board value shows up in the contract view
+
+	correct_default_board_output:
+		default_board_out ~ "[
+				*******
+				*******
+				*******
+				*******
+				*******
+				*******
 				*******
 				]"
 
 	correct_easy_board_output:
-		easy_board_out.out = "[
-				*******
-				*******
-				*******
-				*******
-				*******
-				*******
+		easy_board_out ~ "[
+				***.***
+				***O***
+				***O***
+				***.***
+				***O***
+				***.***
 				*******
 				]"
 
 	correct_cross_board_output:
-		cross_board_out.out= "[
+		cross_board_out ~ "[
 				**...**
 				**.O.**
 				..OOO..
@@ -161,54 +162,83 @@ invariant
 				**...**
 				]"
 
+	correct_plus_board_output:
+		plus_board_out ~ "[
+				**...**
+				**.O.**
+				...O...
+				.OOOOO.
+				...O...
+				**.O.**
+				**...**
+				]"
+
+	correct_pyramid_board_output:
+		pyramid_board_out ~ "[
+				**...**
+				**.O.**
+				..OOO..
+				.OOOOO.
+				OOOOOOO
+				**...**
+				**...**
+				]"
+
+	correct_arrow_board_output:
+		arrow_board_out ~ "[
+				**.O.**
+				**OOO**
+				.OOOOO.
+				...O...
+				...O...
+				**OOO**
+				**OOO**
+				]"
+
+	correct_diamond_board_output:
+		diamond_board_out ~ "[
+				**.O.**
+				**OOO**
+				.OOOOO.
+				OOO.OOO
+				.OOOOO.
+				**OOO**
+				**.O.**
+				]"
+
+	correct_skull_board_output:
+		skull_board_out ~ "[
+				**OOO**
+				**OOO**
+				.OOOOO.
+				.O.O.O.
+				.OOOOO.
+				**OOO**
+				**OOO**
+				]"
 
 -- Second Category Invariants
+	consistent_default_board_outputs:
+		default_board.out ~ default_board_out
 
-	correct_default_board_output: True
-		-- Your task.
+	consistent_easy_board_outputs:
+		easy_board.out ~ easy_board_out
 
-	correct_easy_board_output: True
-		-- Your task.
+	consistent_cross_board_outputs:
+		cross_board.out ~ cross_board_out
 
-	correct_cross_board_output: True
-		-- Your task.
+	consistent_plus_board_outputs:
+		plus_board.out ~ plus_board_out
 
-	correct_plus_board_output: True
-		-- Your task.
+	consistent_pyramid_board_outputs:
+		pyramid_board.out ~ pyramid_board_out
 
-	correct_pyramid_board_output: True
-		-- Your task.
+	consistent_arrow_board_outputs:
+		arrow_board.out ~ arrow_board_out
 
-	correct_arrow_board_output: True
-		-- Your task.
+	consistent_diamond_board_outputs:
+		diamond_board.out ~ diamond_board_out
 
-	correct_diamond_board_output: True
-		-- Your task.
-
-	correct_skull_board_output: True
-		-- Your task.
-
-	consistent_default_board_outputs: True
-		-- Your task.
-
-	consistent_easy_board_outputs: True
-		-- Your task.
-
-	consistent_cross_board_outputs: True
-		-- Your task.
-
-	consistent_plus_board_outputs: True
-		-- Your task.
-
-	consistent_pyramid_board_outputs: True
-		-- Your task.
-
-	consistent_arrow_board_outputs: True
-		-- Your task.
-
-	consistent_diamond_board_outputs: True
-		-- Your task.
-
-	consistent_skull_board_outputs: True
-		-- Your task.
+	consistent_skull_board_outputs:
+		skull_board.out ~ skull_board_out
 end

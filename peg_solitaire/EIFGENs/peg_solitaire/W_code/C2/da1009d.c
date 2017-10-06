@@ -25,11 +25,11 @@ static const EIF_TYPE_INDEX egt_12_1009 [] = {0xFF01,1008,0xFFFF};
 static const EIF_TYPE_INDEX egt_13_1009 [] = {0xFF01,966,0xFFFF};
 static const EIF_TYPE_INDEX egt_14_1009 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_15_1009 [] = {0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_16_1009 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_17_1009 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_18_1009 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_19_1009 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_20_1009 [] = {0xFF01,316,217,0xFFFF};
+static const EIF_TYPE_INDEX egt_16_1009 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_17_1009 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_18_1009 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_19_1009 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_20_1009 [] = {0xFF01,351,217,0xFFFF};
 static const EIF_TYPE_INDEX egt_21_1009 [] = {0xFF01,165,0xFFFF};
 static const EIF_TYPE_INDEX egt_22_1009 [] = {0xFF01,231,0xFFFF};
 
@@ -122,7 +122,7 @@ void Init1009(void)
 	IDSC(desc_1009 + 32, 406, 1008);
 	IDSC(desc_1009 + 36, 394, 1008);
 	IDSC(desc_1009 + 50, 395, 1008);
-	IDSC(desc_1009 + 58, 125, 1008);
+	IDSC(desc_1009 + 58, 127, 1008);
 	IDSC(desc_1009 + 60, 387, 1008);
 	IDSC(desc_1009 + 72, 388, 1008);
 }

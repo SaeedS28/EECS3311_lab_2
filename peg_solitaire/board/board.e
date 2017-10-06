@@ -30,8 +30,8 @@ feature -- Constructor
 		do
 			create imp.make_filled (unavailable_slot, 7, 7)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+				Current = bta.templates.default_board
 		end
 
 	make_easy
@@ -53,8 +53,7 @@ feature -- Constructor
 			-- Initialize a Cross board.
 		do
 			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+
 		ensure
 			board_set: True
 				-- Your task.
@@ -216,19 +215,19 @@ feature -- Queries
 	number_of_rows: INTEGER
 			-- Number of rows in the board of game.
 		do
-			-- Your task.
+			Result := imp.height
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result:
+				Result = imp.height
 		end
 
 	number_of_columns: INTEGER
 			-- Number of columns in the board of game.
 		do
-			-- Your task.
+			Result := imp.width
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result:
+				Result = imp.width
 		end
 
 	is_valid_row (r: INTEGER): BOOLEAN
