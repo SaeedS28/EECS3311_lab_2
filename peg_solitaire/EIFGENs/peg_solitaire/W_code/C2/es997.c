@@ -71,7 +71,7 @@ void F997_7421 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x, EIF_TYPED_VALUE ar
 	RTDBGEAA(996, Current, 13666);
 	RTCC(arg1, 996, l_feature_name, 1, eif_new_type(231, 0x01), 0x01);
 	{
-		static EIF_TYPE_INDEX typarr0[] = {0xFF01,345,0xFF01,0xFFF9,0,185,0xFFFF};
+		static EIF_TYPE_INDEX typarr0[] = {0xFF01,370,0xFF01,0xFFF9,0,185,0xFFFF};
 		EIF_TYPE typres0;
 		static EIF_TYPE typcache0 = {INVALID_DTYPE, 0};
 		
@@ -80,7 +80,7 @@ void F997_7421 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x, EIF_TYPED_VALUE ar
 	}
 	RTIV(Current, RTAL);
 	RTHOOK(1);
-	RTDBGAA(Current, dtype, 5217, 0xF8000159, 0); /* case */
+	RTDBGAA(Current, dtype, 5217, 0xF8000172, 0); /* case */
 	RTAR(Current, arg2);
 	*(EIF_REFERENCE *)(Current + RTWA(5217, dtype)) = (EIF_REFERENCE) RTCCL(arg2);
 	RTHOOK(2);

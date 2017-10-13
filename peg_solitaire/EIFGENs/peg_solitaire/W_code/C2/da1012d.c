@@ -25,19 +25,19 @@ static const EIF_TYPE_INDEX egt_12_1012 [] = {0xFF01,1011,0xFFFF};
 static const EIF_TYPE_INDEX egt_13_1012 [] = {0xFF01,966,0xFFFF};
 static const EIF_TYPE_INDEX egt_14_1012 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_15_1012 [] = {0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_16_1012 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_17_1012 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_18_1012 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_19_1012 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_20_1012 [] = {0xFF01,316,217,0xFFFF};
+static const EIF_TYPE_INDEX egt_16_1012 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_17_1012 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_18_1012 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_19_1012 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_20_1012 [] = {0xFF01,351,217,0xFFFF};
 static const EIF_TYPE_INDEX egt_21_1012 [] = {0xFF01,165,0xFFFF};
 static const EIF_TYPE_INDEX egt_22_1012 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_23_1012 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_24_1012 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_25_1012 [] = {0xFF01,0xFFF9,2,185,0xFF01,231,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_26_1012 [] = {0xFF01,366,0xFF01,1002,217,0xFFFF};
-static const EIF_TYPE_INDEX egt_27_1012 [] = {247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_28_1012 [] = {247,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_26_1012 [] = {0xFF01,337,0xFF01,1002,217,0xFFFF};
+static const EIF_TYPE_INDEX egt_27_1012 [] = {263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_28_1012 [] = {263,0xFF01,231,0xFFFF};
 
 
 static const struct desc_info desc_1012[] = {
@@ -226,7 +226,7 @@ void Init1012(void)
 	IDSC(desc_1012 + 32, 406, 1011);
 	IDSC(desc_1012 + 36, 394, 1011);
 	IDSC(desc_1012 + 50, 395, 1011);
-	IDSC(desc_1012 + 58, 125, 1011);
+	IDSC(desc_1012 + 58, 127, 1011);
 	IDSC(desc_1012 + 60, 387, 1011);
 	IDSC(desc_1012 + 72, 388, 1011);
 	IDSC(desc_1012 + 79, 403, 1011);

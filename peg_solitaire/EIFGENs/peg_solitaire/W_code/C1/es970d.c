@@ -28,7 +28,7 @@ static const EIF_TYPE_INDEX egt_15_970 [] = {0xFF01,182,0xFFFF};
 static const EIF_TYPE_INDEX egt_16_970 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_17_970 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_18_970 [] = {0xFF01,182,0xFFFF};
-static const EIF_TYPE_INDEX egt_19_970 [] = {0xFF01,465,0xFF01,973,0xFFFF};
+static const EIF_TYPE_INDEX egt_19_970 [] = {0xFF01,323,0xFF01,973,0xFFFF};
 
 
 static const struct desc_info desc_970[] = {

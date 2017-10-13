@@ -94,7 +94,7 @@ void F961_7108 (EIF_REFERENCE Current)
 	RTDBGEAA(960, Current, 13389);
 	RTIV(Current, RTAL);
 	RTHOOK(1);
-	RTDBGAA(Current, dtype, 4964, 0xF80003F6, 0); /* imp */
+	RTDBGAA(Current, dtype, 4964, 0xF80003F8, 0); /* imp */
 	tr1 = RTLNSMART(RTWCT(4964, dtype, Dftype(Current)).id);
 	tr2 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(4953, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 	ur1 = RTCCL(tr2);

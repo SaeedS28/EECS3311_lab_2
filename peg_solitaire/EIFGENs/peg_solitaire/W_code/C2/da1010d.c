@@ -26,22 +26,22 @@ static const EIF_TYPE_INDEX egt_13_1010 [] = {0xFF01,1009,0xFFFF};
 static const EIF_TYPE_INDEX egt_14_1010 [] = {0xFF01,1009,0xFFFF};
 static const EIF_TYPE_INDEX egt_15_1010 [] = {0xFF01,1009,0xFFFF};
 static const EIF_TYPE_INDEX egt_16_1010 [] = {0xFF01,1000,0xFFFF};
-static const EIF_TYPE_INDEX egt_17_1010 [] = {0xFF01,1015,0xFF01,1009,0xFFFF};
+static const EIF_TYPE_INDEX egt_17_1010 [] = {0xFF01,1014,0xFF01,1009,0xFFFF};
 static const EIF_TYPE_INDEX egt_18_1010 [] = {0xFF01,1000,0xFFFF};
 static const EIF_TYPE_INDEX egt_19_1010 [] = {0xFF01,966,0xFFFF};
 static const EIF_TYPE_INDEX egt_20_1010 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_21_1010 [] = {0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_22_1010 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_23_1010 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_24_1010 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_25_1010 [] = {0xFF01,247,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_26_1010 [] = {0xFF01,316,217,0xFFFF};
+static const EIF_TYPE_INDEX egt_22_1010 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_23_1010 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_24_1010 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_25_1010 [] = {0xFF01,263,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_26_1010 [] = {0xFF01,351,217,0xFFFF};
 static const EIF_TYPE_INDEX egt_27_1010 [] = {0xFF01,165,0xFFFF};
 static const EIF_TYPE_INDEX egt_28_1010 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_29_1010 [] = {0xFF01,1012,0xFFFF};
 static const EIF_TYPE_INDEX egt_30_1010 [] = {0xFF01,1009,0xFFFF};
 static const EIF_TYPE_INDEX egt_31_1010 [] = {0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_32_1010 [] = {0xFF01,319,217,0xFFFF};
+static const EIF_TYPE_INDEX egt_32_1010 [] = {0xFF01,340,217,0xFFFF};
 static const EIF_TYPE_INDEX egt_33_1010 [] = {0xFF01,231,0xFFFF};
 
 
@@ -178,13 +178,13 @@ void Init1010(void)
 {
 	IDSC(desc_1010, 0, 1009);
 	IDSC(desc_1010 + 1, 1, 1009);
-	IDSC(desc_1010 + 32, 209, 1009);
+	IDSC(desc_1010 + 32, 210, 1009);
 	IDSC(desc_1010 + 36, 298, 1009);
 	IDSC(desc_1010 + 39, 386, 1009);
 	IDSC(desc_1010 + 43, 406, 1009);
 	IDSC(desc_1010 + 47, 394, 1009);
 	IDSC(desc_1010 + 61, 395, 1009);
-	IDSC(desc_1010 + 69, 125, 1009);
+	IDSC(desc_1010 + 69, 127, 1009);
 	IDSC(desc_1010 + 71, 387, 1009);
 	IDSC(desc_1010 + 83, 388, 1009);
 	IDSC(desc_1010 + 90, 379, 1009);
