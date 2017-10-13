@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 note
 	description: "A board for the peg solitaire game."
 	author: ""
@@ -54,83 +53,116 @@ feature -- Constructor
 			-- Initialize a Cross board.
 		do
 			make_easy
+			set_statuses (2,5,4,4,occupied_slot)
+            set_statuses (3,3,3,5,occupied_slot)
+			set_statuses (3,5,6,7,unoccupied_slot)
+			set_statuses (1,7,3,5,unoccupied_slot)
+			set_statuses (3,5,1,2,unoccupied_slot)
 
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+				current ~ bta.templates.cross_board
 		end
 
 	make_plus
 			-- Initialize a Plus board.
 		do
 			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			set_statuses (3,5,1,7,unoccupied_slot)
+			set_statuses (2,6,4,4,occupied_slot)
+			set_statuses (1,7,3,5,unoccupied_slot)
+			set_statuses (4,4,2,6,occupied_slot)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+				current~bta.templates.plus_board
 		end
 
 	make_pyramid
 			-- Initialize a Pyramid board.
 		do
 			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			set_statuses (3,5,1,7,occupied_slot)
+			set_statuses (6,7,3,5,unoccupied_slot)
+			set_statuses (1,1,3,5,unoccupied_slot)
+			set_status (2,3, unoccupied_slot)
+			set_status (2,4, occupied_slot)
+			set_status (3,6, unoccupied_slot)
+			set_status (3,2, unoccupied_slot)
+			set_statuses (3,4,1,1,unoccupied_slot)
+			set_statuses (3,4,7,7,unoccupied_slot)
+			set_status (2,5,unoccupied_slot)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+				current~bta.templates.pyramid_board
 		end
 
 	make_arrow
 			-- Initialize a Arrow board.
 		do
 			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			set_statuses (1,5,4,4,occupied_slot)
+			set_statuses (6,7,3,5,occupied_slot)
+			set_statuses (3,5,5,7,unoccupied_slot)
+			set_statuses (3,5,1,3,unoccupied_slot)
+			set_status (1,3, unoccupied_slot)
+			set_status (1,5, unoccupied_slot)
+			set_statuses (2,2,3,5,occupied_slot)
+			set_statuses (3,3,2,6,occupied_slot)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+				current ~ bta.templates.arrow_board
 		end
 
 	make_diamond
 			-- Initialize a Diamond board.
 		do
 			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			set_status (1,3,unoccupied_slot)
+			set_status (1,5,unoccupied_slot)
+			set_status (3,1,unoccupied_slot)
+			set_status (3,7,unoccupied_slot)
+			set_status (4,4,unoccupied_slot)
+			set_status (5,1,unoccupied_slot)
+			set_status (5,7,unoccupied_slot)
+			set_status (7,3,unoccupied_slot)
+			set_status (7,5,unoccupied_slot)
+			set_statuses (1,7,3,5,occupied_slot)
+			set_statuses (3,5,1,7,occupied_slot)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+				current~bta.templates.diamond_board
 		end
 
 	make_skull
 			-- Initialize a Skull board.
 		do
 			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			set_statuses (3,5,1,7,occupied_slot)
+			set_statuses (3,5,1,1,unoccupied_slot)
+			set_statuses (1,7,3,5,occupied_slot)
+			set_statuses (3,5,7,7,unoccupied_slot)
+			set_status (4,3,unoccupied_slot)
+			set_status (4,5,unoccupied_slot)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+				current~bta.templates.skull_board
 		end
 
 feature -- Auxiliary Commands
 	set_status (r, c: INTEGER; status: SLOT_STATUS)
 			-- Set the status of slot at row 'r' and column 'c' to 'status'.
 		require
-			valid_row: True
-				-- Your task.
-			valid_column: True
-				-- Your task.
+			valid_row:
+				is_valid_column(r)
+			valid_column:
+				is_valid_column(c)
 		do
-			-- Your task.
+			imp.put (status, r, c)
 		ensure
-			slot_set: True
-				-- Your task.
-			slots_not_in_range_unchanged: True
-				-- Your task.
-				-- Hint: Use query 'matches_slots_except'.
+			slot_set:
+				imp.item (r, c) ~status
+			slots_not_in_range_unchanged:
+				matches_slots_except(current,r,r,c,c)
 		end
 
 	set_statuses (r1, r2, c1, c2: INTEGER; status: SLOT_STATUS)
@@ -138,22 +170,39 @@ feature -- Auxiliary Commands
 			-- intersection of rows 'r1' to 'r2' and
 			-- columns 'c1' to 'c2'.
 		require
-			valid_rows: True
-				-- Your task.
-			valid_columns: True
-				-- Your task.
-			valid_row_range: True
-				-- Your task.
-			valid_column_range: True
-				-- Your task.
+			valid_rows:
+				is_valid_row(r1) and is_valid_row(r2)
+			valid_columns:
+				is_valid_column(c1) and is_valid_column(c2)
+			valid_row_range:
+				r1<=r2
+			valid_column_range:
+				c1<c2
 		do
-			-- Your task.
+			across
+				1 |..| imp.height as n
+			loop
+				across
+					1 |..| imp.width as m
+				loop
+					if (n.item>=r1 and n.item<r2) and (m.item>=c1 and m.item<c2) then
+						imp.put(status, n.item, m.item)
+					end
+				end
+			end
 		ensure
-			slots_in_range_set: True
-				-- Your task.
-			slots_not_in_range_unchanged: True
-				-- Your task.
-				-- Hint: Use query 'matches_slots_except'.
+			slots_in_range_set:
+				across
+					r1 |..| r2 as n
+				all
+					across
+						c1 |..| c2 as m
+					all
+						imp.item (n.item, m.item)~status
+					end
+				end
+			slots_not_in_range_unchanged:
+				matches_slots_except (current, r1,r2,c1,c2)
 		end
 
 feature -- Auxiliary Queries
@@ -164,28 +213,40 @@ feature -- Auxiliary Queries
 			-- rows 'r1' to 'r2' and columns 'c1' and 'c2'
 			-- match in Current and 'other'.
 		require
-			consistent_row_numbers: True
-				-- Your task.
-			consistent_column_numbers: True
-				-- Your task.
-			valid_rows: True
-				-- Your task.
-			valid_columns: True
-				-- Your task.
-			valid_row_range: True
-				-- Your task.
-			valid_column_range: True
-				-- Your task.
+			consistent_row_numbers:
+				current.number_of_rows=other.number_of_rows
+			consistent_column_numbers:
+				current.number_of_columns=other.number_of_columns
+			valid_rows:
+				is_valid_row(r1) and is_valid_row(r2)
+			valid_columns:
+				is_valid_column(r1) and is_valid_column(r2)
+			valid_row_range:
+				r1<=r2
+			valid_column_range:
+				c1<=c2
 		do
-			-- Your task.
+			Result:=
+			across
+				1 |..| number_of_rows as i
+			all
+				across
+					1 |..| number_of_columns as j
+				all
+					Current.status_of (i.item,j.item) = other.status_of (i.item,j.item) or	(i.item <= r2 and i.item >= r1 and j.item >= c1 and j.item <= c2)
+				end
+			end
 		ensure
-			correct_result: True
-				-- Your task.
-				-- Hint: write two nested across expressions to
-				-- iterate through all slots. Each slot is identified
-				-- by its row and column numbers. If the slot location
-				-- is not witin 'r1', 'r2', 'c1', and 'c2', then
-				-- its value in 'Current' is equal to that in 'other'.
+			correct_result:
+				across
+					1 |..| number_of_rows as i
+				all
+					across
+						1 |..| number_of_columns as j
+					all
+						Current.status_of (i.item,j.item) = other.status_of (i.item,j.item) or (i.item <= r2 and i.item >= r1 and j.item >= c1 and j.item <= c2 )
+				end
+			end
 		end
 
 	unavailable_slot: UNAVAILABLE_SLOT
@@ -234,64 +295,88 @@ feature -- Queries
 	is_valid_row (r: INTEGER): BOOLEAN
 			-- Is 'r' a valid row number?
 		do
-			-- Your task.
+			Result := r>=1 and r<= number_of_rows
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result:
+				Result = (r>=1) and (r<= number_of_rows)
 		end
 
 	is_valid_column (c: INTEGER): BOOLEAN
 			-- Is 'x' a valid column number?
 		do
-			-- Your task.
+			Result:=c>=1 and c<= number_of_columns
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result:
+				Result= (c>=1) and (c<=number_of_columns)
 		end
 
 	status_of (r, c: INTEGER): SLOT_STATUS
 			-- Is the slot at row 'r' and column 'c'
 			-- unavailable, occupied, or unoccupied?
 		require
-			valid_row: True
-				-- Your task.
-			valid_column: True
-				-- Your task.
+			valid_row:
+				is_valid_row(r)
+			valid_column:
+				is_valid_column(c)
 		do
-			Result := ssa.unavailable_slot
-			-- Your task: the current implementation
-			-- may not be correct.
+			Result := imp.item (r, c)
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result:
+				Result = imp.item (r, c)
 		end
 
 	number_of_occupied_slots: INTEGER
 			-- Number of slots occupied by pegs on current board.
 		do
-			-- Your task.
-			-- No postcondition is needed for this auxiliary query.
+			across
+				1 |..| number_of_rows as n
+			loop
+				across
+					1 |..| number_of_columns as m
+				loop
+					if status_of(n.item,m.item) = occupied_slot then
+						result:=result+1
+					end
+				end
+			end
 		end
 
 feature -- Equality
 	is_equal (other: like Current): BOOLEAN
 			-- Is current board equal to 'other'?
 		do
-			-- Your task.
+			Result:=Current.out~other.out
 		ensure then
-			correct_result: True
-				-- Your task.
+			correct_result:
+				Result = current.out~other.out
 		end
 
 feature -- Output
 	out: STRING
 			-- String representation of current board.
+		local
+			s : STRING
 		do
-			create Result.make_empty
-			-- Your task: the current implementation
-			-- may not be correct.
-			-- No postcondition is needed for this query.
-		end
+			create s.make_empty
+			across
+				1 |..| number_of_rows as i
+			loop
+				across
+					1 |..| number_of_columns as j
+				loop
+					if imp.item (i.item, j.item) ~ occupied_slot then
+						s.append ("O")
+					elseif imp.item (i.item, j.item) ~ unavailable_slot then
+						s.append ("*")
+					else
+						s.append (".")
+					end
+						s.append ("%N")
+					end
+				end
+				s.remove_tail(1)
+				result := s
+			end
 
 feature {NONE} -- Implementation
 
@@ -301,307 +386,3 @@ feature {NONE} -- Implementation
 	-- Note: ARRAY2 takes row (y) and then column (x)
 	imp: ARRAY2[SLOT_STATUS]
 end
-=======
-note
-	description: "A board for the peg solitaire game."
-	author: ""
-	date: "$Date$"
-	revision: "$Revision$"
-
-class
-	BOARD
-
-inherit
-	ANY
-		redefine
-			out, is_equal
-		end
-
-create
-	make_default,
-	make_easy,
-	make_cross,
-	make_plus,
-	make_pyramid,
-	make_arrow,
-	make_diamond,
-	make_skull
-
-
-feature -- Constructor
-	make_default
-			-- Initialize a default board with all slots unavailable.
-		do
-			create imp.make_filled (unavailable_slot, 7, 7)
-		ensure
-			board_set:
-				Current = bta.templates.default_board
-		end
-
-	make_easy
-			-- Initialize an easy board.
-		do
-			make_default
-			set_status (1, 4, unoccupied_slot)
-			set_status (4, 4, unoccupied_slot)
-			set_status (6, 4, unoccupied_slot)
-
-			set_statuses (2, 3, 4, 4, occupied_slot)
-			set_status (5, 4, occupied_slot)
-		ensure
-			board_set:
-				Current ~ bta.templates.easy_board
-		end
-
-	make_cross
-			-- Initialize a Cross board.
-		do
-			make_easy
-
-		ensure
-			board_set: True
-				-- Your task.
-		end
-
-	make_plus
-			-- Initialize a Plus board.
-		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
-		ensure
-			board_set: True
-				-- Your task.
-		end
-
-	make_pyramid
-			-- Initialize a Pyramid board.
-		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
-		ensure
-			board_set: True
-				-- Your task.
-		end
-
-	make_arrow
-			-- Initialize a Arrow board.
-		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
-		ensure
-			board_set: True
-				-- Your task.
-		end
-
-	make_diamond
-			-- Initialize a Diamond board.
-		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
-		ensure
-			board_set: True
-				-- Your task.
-		end
-
-	make_skull
-			-- Initialize a Skull board.
-		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
-		ensure
-			board_set: True
-				-- Your task.
-		end
-
-feature -- Auxiliary Commands
-	set_status (r, c: INTEGER; status: SLOT_STATUS)
-			-- Set the status of slot at row 'r' and column 'c' to 'status'.
-		require
-			valid_row: True
-				-- Your task.
-			valid_column: True
-				-- Your task.
-		do
-			-- Your task.
-		ensure
-			slot_set: True
-				-- Your task.
-			slots_not_in_range_unchanged: True
-				-- Your task.
-				-- Hint: Use query 'matches_slots_except'.
-		end
-
-	set_statuses (r1, r2, c1, c2: INTEGER; status: SLOT_STATUS)
-			-- Set the range of slots to 'status':
-			-- intersection of rows 'r1' to 'r2' and
-			-- columns 'c1' to 'c2'.
-		require
-			valid_rows: True
-				-- Your task.
-			valid_columns: True
-				-- Your task.
-			valid_row_range: True
-				-- Your task.
-			valid_column_range: True
-				-- Your task.
-		do
-			-- Your task.
-		ensure
-			slots_in_range_set: True
-				-- Your task.
-			slots_not_in_range_unchanged: True
-				-- Your task.
-				-- Hint: Use query 'matches_slots_except'.
-		end
-
-feature -- Auxiliary Queries
-	matches_slots_except (
-		other: BOARD; r1, r2, c1, c2: INTEGER)
-	: BOOLEAN
-			-- Do slots outside the intersection of
-			-- rows 'r1' to 'r2' and columns 'c1' and 'c2'
-			-- match in Current and 'other'.
-		require
-			consistent_row_numbers: True
-				-- Your task.
-			consistent_column_numbers: True
-				-- Your task.
-			valid_rows: True
-				-- Your task.
-			valid_columns: True
-				-- Your task.
-			valid_row_range: True
-				-- Your task.
-			valid_column_range: True
-				-- Your task.
-		do
-			-- Your task.
-		ensure
-			correct_result: True
-				-- Your task.
-				-- Hint: write two nested across expressions to
-				-- iterate through all slots. Each slot is identified
-				-- by its row and column numbers. If the slot location
-				-- is not witin 'r1', 'r2', 'c1', and 'c2', then
-				-- its value in 'Current' is equal to that in 'other'.
-		end
-
-	unavailable_slot: UNAVAILABLE_SLOT
-			-- A slot not available for movement.
-		do
-			Result := ssa.unavailable_slot
-		ensure
-			Result = ssa.unavailable_slot
-		end
-
-	occupied_slot: OCCUPIED_SLOT
-			-- A slot available for moment but currently occupied.
-		do
-			Result := ssa.occupied_slot
-		ensure
-			Result = ssa.occupied_slot
-		end
-
-	unoccupied_slot: UNOCCUPIED_SLOT
-			-- A slot available for moment and currently unoccupied.
-		do
-			Result := ssa.unoccupied_slot
-		ensure
-			Result = ssa.unoccupied_slot
-		end
-
-feature -- Queries
-	number_of_rows: INTEGER
-			-- Number of rows in the board of game.
-		do
-			Result := imp.height
-		ensure
-			correct_result:
-				Result = imp.height
-		end
-
-	number_of_columns: INTEGER
-			-- Number of columns in the board of game.
-		do
-			Result := imp.width
-		ensure
-			correct_result:
-				Result = imp.width
-		end
-
-	is_valid_row (r: INTEGER): BOOLEAN
-			-- Is 'r' a valid row number?
-		do
-			-- Your task.
-		ensure
-			correct_result: True
-				-- Your task.
-		end
-
-	is_valid_column (c: INTEGER): BOOLEAN
-			-- Is 'x' a valid column number?
-		do
-			-- Your task.
-		ensure
-			correct_result: True
-				-- Your task.
-		end
-
-	status_of (r, c: INTEGER): SLOT_STATUS
-			-- Is the slot at row 'r' and column 'c'
-			-- unavailable, occupied, or unoccupied?
-		require
-			valid_row: True
-				-- Your task.
-			valid_column: True
-				-- Your task.
-		do
-			Result := ssa.unavailable_slot
-			-- Your task: the current implementation
-			-- may not be correct.
-		ensure
-			correct_result: True
-				-- Your task.
-		end
-
-	number_of_occupied_slots: INTEGER
-			-- Number of slots occupied by pegs on current board.
-		do
-			-- Your task.
-			-- No postcondition is needed for this auxiliary query.
-		end
-
-feature -- Equality
-	is_equal (other: like Current): BOOLEAN
-			-- Is current board equal to 'other'?
-		do
-			-- Your task.
-		ensure then
-			correct_result: True
-				-- Your task.
-		end
-
-feature -- Output
-	out: STRING
-			-- String representation of current board.
-		do
-			create Result.make_empty
-			-- Your task: the current implementation
-			-- may not be correct.
-			-- No postcondition is needed for this query.
-		end
-
-feature {NONE} -- Implementation
-
-	ssa:SLOT_STATUS_ACCESS
-	bta: BOARD_TEMPLATES_ACCESS
-
-	-- Note: ARRAY2 takes row (y) and then column (x)
-	imp: ARRAY2[SLOT_STATUS]
-end
->>>>>>> e96ebacb45fe7a7b0c271ec4d2a6904e198faea1
