@@ -1,5 +1,5 @@
 /*
- * Code for class TYPE [BOARD_TEMPLATES_ACCESS]
+ * Code for class TYPE [SLOT_STATUS_ACCESS]
  */
 
 #include "eif_eiffel.h"
@@ -805,7 +805,7 @@ EIF_TYPED_VALUE F1015_5183 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	char *l_feature_name = "adapt";
 	RTEX;
 #define arg1 arg1x.it_r
-	struct eif_ex_963 sarg1;
+	struct eif_ex_958 sarg1;
 	EIF_REFERENCE earg1 = (EIF_REFERENCE) sarg1.data;
 	
 	EIF_REFERENCE tr1 = NULL;
@@ -842,7 +842,7 @@ EIF_TYPED_VALUE F1015_5183 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	wstdinit(Result,Result);
 	RTLXI(Result);
 	RTHOOK(1);
-	RTDBGAL(Current, 0, 0x800003C3, 0,0); /* Result */
+	RTDBGAL(Current, 0, 0x800003BE, 0,0); /* Result */
 	tr1 = RTRCL(earg1);
 	RTXA(tr1, Result);
 	if (RTAL & CK_ENSURE) {
@@ -872,7 +872,7 @@ EIF_TYPED_VALUE F1015_5184 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	GTCX
 	char *l_feature_name = "attempted";
 	RTEX;
-	struct eif_ex_963 sloc1;
+	struct eif_ex_958 sloc1;
 	EIF_REFERENCE loc1 = (EIF_REFERENCE) sloc1.data;
 #define arg1 arg1x.it_r
 	EIF_TYPED_VALUE up1x = {{0}, SK_POINTER};
@@ -919,7 +919,7 @@ EIF_TYPED_VALUE F1015_5184 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	RTOE(RTWCT(3824, dtype, Dftype(Current)), tr1, loc1, tb1);
 	if (tb1) {
 		RTHOOK(2);
-		RTDBGAL(Current, 0, 0x800003C3, 0,0); /* Result */
+		RTDBGAL(Current, 0, 0x800003BE, 0,0); /* Result */
 		tr1 = RTRCL(loc1);
 		RTXA(tr1, Result);
 	}
@@ -993,7 +993,7 @@ EIF_TYPED_VALUE F1015_5185 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	wstdinit(Result,Result);
 	RTLXI(Result);
 	RTHOOK(1);
-	RTDBGAL(Current, 0, 0x800003C3, 0,0); /* Result */
+	RTDBGAL(Current, 0, 0x800003BE, 0,0); /* Result */
 	ur1 = RTCCL(arg1);
 	tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWF(3810, dtype))(Current, ur1x)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 	tr1 = RTRCL(tr1);
@@ -1072,7 +1072,7 @@ EIF_TYPED_VALUE F1015_5187 (EIF_REFERENCE Current)
 	GTCX
 	char *l_feature_name = "default";
 	RTEX;
-	struct eif_ex_963 sloc1;
+	struct eif_ex_958 sloc1;
 	EIF_REFERENCE loc1 = (EIF_REFERENCE) sloc1.data;
 	EIF_BOOLEAN tb1;
 	EIF_REFERENCE Result = ((EIF_REFERENCE) 0);

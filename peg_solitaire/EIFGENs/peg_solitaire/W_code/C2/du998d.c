@@ -79,9 +79,9 @@ void Init998(void)
 {
 	IDSC(desc_998, 0, 997);
 	IDSC(desc_998 + 1, 1, 997);
-	IDSC(desc_998 + 32, 209, 997);
-	IDSC(desc_998 + 36, 389, 997);
-	IDSC(desc_998 + 39, 399, 997);
+	IDSC(desc_998 + 32, 210, 997);
+	IDSC(desc_998 + 36, 393, 997);
+	IDSC(desc_998 + 39, 405, 997);
 }
 
 

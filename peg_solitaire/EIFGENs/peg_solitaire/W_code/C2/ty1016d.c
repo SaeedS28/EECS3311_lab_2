@@ -1,5 +1,5 @@
 /*
- * Class TYPE [SLOT_STATUS_ACCESS]
+ * Class TYPE [BOARD_TEMPLATES_ACCESS]
  */
 
 #include "eif_macros.h"
@@ -10,19 +10,19 @@ extern "C" {
 #endif
 
 static const EIF_TYPE_INDEX egt_0_1016 [] = {0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_1_1016 [] = {0xFF01,244,1015,957,0xFFFF};
-static const EIF_TYPE_INDEX egt_2_1016 [] = {0xFF01,1015,957,0xFFFF};
+static const EIF_TYPE_INDEX egt_1_1016 [] = {0xFF01,244,1015,963,0xFFFF};
+static const EIF_TYPE_INDEX egt_2_1016 [] = {0xFF01,1015,963,0xFFFF};
 static const EIF_TYPE_INDEX egt_3_1016 [] = {0,0xFFFF};
 static const EIF_TYPE_INDEX egt_4_1016 [] = {0,0xFFFF};
-static const EIF_TYPE_INDEX egt_5_1016 [] = {0xFF01,1015,957,0xFFFF};
-static const EIF_TYPE_INDEX egt_6_1016 [] = {0xFF01,1015,957,0xFFFF};
+static const EIF_TYPE_INDEX egt_5_1016 [] = {0xFF01,1015,963,0xFFFF};
+static const EIF_TYPE_INDEX egt_6_1016 [] = {0xFF01,1015,963,0xFFFF};
 static const EIF_TYPE_INDEX egt_7_1016 [] = {0,0xFFFF};
 static const EIF_TYPE_INDEX egt_8_1016 [] = {0xFF01,14,0xFFFF};
 static const EIF_TYPE_INDEX egt_9_1016 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_10_1016 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_11_1016 [] = {0xFF01,15,0xFFFF};
-static const EIF_TYPE_INDEX egt_12_1016 [] = {1015,957,0xFFFF};
-static const EIF_TYPE_INDEX egt_13_1016 [] = {0xFF01,1015,957,0xFFFF};
+static const EIF_TYPE_INDEX egt_12_1016 [] = {1015,963,0xFFFF};
+static const EIF_TYPE_INDEX egt_13_1016 [] = {0xFF01,1015,963,0xFFFF};
 static const EIF_TYPE_INDEX egt_14_1016 [] = {0xFF01,240,0xFFFF};
 static const EIF_TYPE_INDEX egt_15_1016 [] = {0xFF01,239,0xFFFF};
 static const EIF_TYPE_INDEX egt_16_1016 [] = {0xFF01,244,0,0xFFFF};
@@ -111,8 +111,8 @@ void Init1016(void)
 {
 	IDSC(desc_1016, 0, 1015);
 	IDSC(desc_1016 + 1, 1, 1015);
-	IDSC(desc_1016 + 32, 257, 1015);
-	IDSC(desc_1016 + 34, 209, 1015);
+	IDSC(desc_1016 + 32, 256, 1015);
+	IDSC(desc_1016 + 34, 210, 1015);
 	IDSC(desc_1016 + 38, 11, 1015);
 	IDSC(desc_1016 + 63, 349, 1015);
 }

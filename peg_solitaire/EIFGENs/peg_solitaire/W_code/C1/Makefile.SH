@@ -11,7 +11,7 @@ case "$O" in
 esac
 echo "Compiling C code in C1"
 $spitshell >Makefile <<!GROK!THIS!
-INCLUDE_PATH =  -I"\$(ISE_LIBRARY)/library/time/spec/include"
+INCLUDE_PATH =  -I"\$(ISE_LIBRARY)\library\time\spec\include"
 SHELL = /bin/sh
 CC = $cc
 CPP = $cpp
@@ -58,11 +58,11 @@ OBJECTS = big_file_C1_c.o
 OLDOBJECTS =  ap973.o ap973d.o te977.o te977d.o te976.o te976d.o te975.o te975d.o \
 	es972.o es972d.o es974.o es974d.o bo964.o bo964d.o bo965.o bo965d.o \
 	ga963.o ga963d.o es970.o es970d.o es971.o es971d.o bo962.o bo962d.o \
-	bo961.o bo961d.o es969.o es969d.o c_960.o c_960d.o ti987.o ti987d.o \
-	da988.o da988d.o ti986.o ti986d.o ti985.o ti985d.o da989.o da989d.o \
-	gr968.o gr968d.o ti984.o ti984d.o co983.o co983d.o da967.o da967d.o \
-	da966.o da966d.o un979.o un979d.o oc982.o oc982d.o un981.o un981d.o \
-	sl978.o sl978d.o sl958.o sl958d.o sl959.o sl959d.o av980.o av980d.o 
+	bo961.o bo961d.o es969.o es969d.o sl959.o sl959d.o sl960.o sl960d.o \
+	un988.o un988d.o sl987.o sl987d.o av989.o av989d.o c_958.o c_958d.o \
+	ti982.o ti982d.o da983.o da983d.o da986.o da986d.o da985.o da985d.o \
+	ti981.o ti981d.o ti980.o ti980d.o da984.o da984d.o gr968.o gr968d.o \
+	ti979.o ti979d.o co978.o co978d.o da967.o da967d.o da966.o da966d.o 
 
 all: Cobj1.o
 
