@@ -28,6 +28,7 @@ feature -- Accesses
 
 invariant
 	singleton_slot_statuses:
-		unavailable_slot=unavailable_slot and unoccupied_slot=unoccupied_slot
+		unavailable_slot=unavailable_slot
+		and unoccupied_slot=unoccupied_slot
 		and occupied_slot=occupied_slot
 end

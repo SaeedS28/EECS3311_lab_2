@@ -30,6 +30,5 @@ feature -- Output
 			Result:= "*"
 		ensure then
 			correct_result: Result.is_equal ("*")
-				-- Your task.
 		end
 end

@@ -30,6 +30,6 @@ feature -- Output
 			Result:= "0"
 		ensure then
 			correct_result: Result.is_equal("0")
-				-- Your task.
+
 		end
 end

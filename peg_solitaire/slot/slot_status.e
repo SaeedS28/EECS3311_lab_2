@@ -17,8 +17,8 @@ feature -- Equality
 	is_equal(other: like Current): BOOLEAN
 			-- Is the current slot status equal to 'other'?
 		do
-			Result := Current.out=other.out
+			Result := Current.out~other.out
 		ensure then
-			correct_result: Current.out=other.out
+			correct_result: Result = (Current.out~other.out)
 		end
 end
