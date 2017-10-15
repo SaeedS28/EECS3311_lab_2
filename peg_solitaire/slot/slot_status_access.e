@@ -10,19 +10,19 @@ expanded class
 feature -- Accesses
 	unavailable_slot: UNAVAILABLE_SLOT
 			-- Return the unavailable status of a slot.
-		do
+		once
 			create Result.make
 		end
 
 	occupied_slot: OCCUPIED_SLOT
 			-- Return the occupied status of a slot.
-		do
+		once
 			create Result.make
 		end
 
 	unoccupied_slot: UNOCCUPIED_SLOT
 			-- Return the unoccupied status of a slot.
-		do
+		once
 			create Result.make
 		end
 
