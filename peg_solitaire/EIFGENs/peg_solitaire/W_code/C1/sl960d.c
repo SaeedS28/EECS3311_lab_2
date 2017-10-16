@@ -10,7 +10,7 @@ extern "C" {
 #endif
 
 static const EIF_TYPE_INDEX egt_0_960 [] = {0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_1_960 [] = {0xFF01,1013,959,0xFFFF};
+static const EIF_TYPE_INDEX egt_1_960 [] = {0xFF01,1017,959,0xFFFF};
 static const EIF_TYPE_INDEX egt_2_960 [] = {0xFF01,959,0xFFFF};
 static const EIF_TYPE_INDEX egt_3_960 [] = {0,0xFFFF};
 static const EIF_TYPE_INDEX egt_4_960 [] = {0,0xFFFF};
@@ -23,9 +23,9 @@ static const EIF_TYPE_INDEX egt_10_960 [] = {0xFF01,231,0xFFFF};
 static const EIF_TYPE_INDEX egt_11_960 [] = {0xFF01,15,0xFFFF};
 static const EIF_TYPE_INDEX egt_12_960 [] = {0xFF01,959,0xFFFF};
 static const EIF_TYPE_INDEX egt_13_960 [] = {0xFF01,959,0xFFFF};
-static const EIF_TYPE_INDEX egt_14_960 [] = {0xFF01,987,0xFFFF};
-static const EIF_TYPE_INDEX egt_15_960 [] = {0xFF01,990,0xFFFF};
-static const EIF_TYPE_INDEX egt_16_960 [] = {0xFF01,989,0xFFFF};
+static const EIF_TYPE_INDEX egt_14_960 [] = {0xFF01,989,0xFFFF};
+static const EIF_TYPE_INDEX egt_15_960 [] = {0xFF01,992,0xFFFF};
+static const EIF_TYPE_INDEX egt_16_960 [] = {0xFF01,991,0xFFFF};
 
 
 static const struct desc_info desc_960[] = {
@@ -69,7 +69,7 @@ void Init960(void)
 {
 	IDSC(desc_960, 0, 959);
 	IDSC(desc_960 + 1, 1, 959);
-	IDSC(desc_960 + 32, 376, 959);
+	IDSC(desc_960 + 32, 379, 959);
 }
 
 

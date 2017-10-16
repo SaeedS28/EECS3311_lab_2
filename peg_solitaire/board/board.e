@@ -50,20 +50,20 @@ feature -- Constructor
 	make_cross
 			-- Initialize a Cross board.
 		do
-			make_easy
-			set_statuses (1, 2, 5, 5, unoccupied_slot)
-			set_status (3, 3, occupied_slot)
-			set_statuses (1, 2, 3, 3, unoccupied_slot)
-			set_statuses (3, 5, 6, 6, unoccupied_slot)
-			set_statuses (3, 5, 7, 7, unoccupied_slot)
-			set_statuses (3, 5, 1, 1, unoccupied_slot)
-			set_statuses (3, 5, 2, 2, unoccupied_slot)
-			set_statuses (6, 6, 3, 5, unoccupied_slot)
-			set_statuses (7, 7, 3, 5, unoccupied_slot)
-			set_statuses (4, 5, 3, 3, unoccupied_slot)
-			set_statuses (4, 5, 5, 5, unoccupied_slot)
-			set_status (3, 5, occupied_slot)
+			make_default
+			set_statuses (1, 7, 1, 7, unoccupied_slot)
+			set_statuses (1, 1, 1, 2, unavailable_slot)
+			set_statuses (1, 1,6,7,unavailable_slot)
+			set_statuses (2, 2, 1, 2, unavailable_slot)
+			set_statuses (2, 2, 6, 7, unavailable_slot)
+			set_statuses (6, 6, 1, 2, unavailable_slot)
+			set_statuses (6, 6, 6, 7, unavailable_slot)
+			set_statuses (7, 7, 1, 2, unavailable_slot)
+			set_statuses (7, 7, 6, 7, unavailable_slot)
+			set_status (2, 4, occupied_slot)
 			set_status (4, 4, occupied_slot)
+			set_status (5, 4, occupied_slot)
+			set_statuses (3, 3, 3, 5, occupied_slot)
 
 		ensure
 			board_set:
@@ -73,20 +73,21 @@ feature -- Constructor
 	make_plus
 			-- Initialize a Plus board.
 		do
-			make_easy
-			set_statuses (3, 3, 1, 3, unoccupied_slot)
-			set_statuses (3, 3, 5, 7, unoccupied_slot)
-			set_statuses (1, 2, 3, 3, unoccupied_slot)
-			set_statuses (1, 2, 5, 5, unoccupied_slot)
-			set_status (4, 1, unoccupied_slot)
-			set_status (6, 5, unoccupied_slot)
-			set_status (4, 7, unoccupied_slot)
-			set_status (6, 3, unoccupied_slot)
-			set_statuses (7, 7, 3, 5, unoccupied_slot)
-			set_statuses (5, 5, 1, 3, unoccupied_slot)
-			set_statuses (5, 5, 5, 7, unoccupied_slot)
-			set_status (6, 4, occupied_slot)
+			make_default
+			set_statuses (1, 7, 1, 7, unoccupied_slot)
+			set_statuses (1, 1, 1, 2, unavailable_slot)
+			set_statuses (1, 1,6,7,unavailable_slot)
+			set_statuses (2, 2, 1, 2, unavailable_slot)
+			set_statuses (2, 2, 6, 7, unavailable_slot)
+			set_statuses (6, 6, 1, 2, unavailable_slot)
+			set_statuses (6, 6, 6, 7, unavailable_slot)
+			set_statuses (7, 7, 1, 2, unavailable_slot)
+			set_statuses (7, 7, 6, 7, unavailable_slot)
+			set_status (2, 4, occupied_slot)
+			set_status (3, 4, occupied_slot)
 			set_statuses (4, 4, 2, 6, occupied_slot)
+			set_status (5, 4, occupied_slot)
+			set_status (6, 4, occupied_slot)
 		ensure
 			board_set:
 				current~bta.templates.plus_board
@@ -95,18 +96,20 @@ feature -- Constructor
 	make_pyramid
 			-- Initialize a Pyramid board.
 		do
-			make_easy
-			set_statuses (1, 2, 5, 5, unoccupied_slot)
-			set_statuses (3, 3, 1, 2, unoccupied_slot)
-			set_statuses (3, 3, 6, 7, unoccupied_slot)
-			set_statuses (5, 5, 1, 7, occupied_slot)
-			set_status (4, 1, unoccupied_slot)
-			set_status (4, 7, unoccupied_slot)
+			make_default
+			set_statuses (1, 7, 1, 7, unoccupied_slot)
+			set_statuses (1, 1, 1, 2, unavailable_slot)
+			set_statuses (1, 1,6,7,unavailable_slot)
+			set_statuses (2, 2, 1, 2, unavailable_slot)
+			set_statuses (2, 2, 6, 7, unavailable_slot)
+			set_statuses (6, 6, 1, 2, unavailable_slot)
+			set_statuses (6, 6, 6, 7, unavailable_slot)
+			set_statuses (7, 7, 1, 2, unavailable_slot)
+			set_statuses (7, 7, 6, 7, unavailable_slot)
+			set_status (2, 4, occupied_slot)
+			set_statuses (3, 3, 3,5, occupied_slot)
 			set_statuses (4, 4, 2, 6, occupied_slot)
-			set_statuses (7, 7, 3, 5, unoccupied_slot)
-			set_statuses (6, 6, 3, 5, unoccupied_slot)
-			set_statuses (1, 2, 3, 3, unoccupied_slot)
-			set_statuses (3, 3, 3, 5, occupied_slot)
+			set_statuses (5, 5, 1, 7, occupied_slot)
 		ensure
 			board_set:
 				current~bta.templates.pyramid_board
@@ -115,22 +118,23 @@ feature -- Constructor
 	make_arrow
 			-- Initialize a Arrow board.
 		do
-			make_easy
-			set_status (3, 1, unoccupied_slot)
-			set_status (3, 7, unoccupied_slot)
-			set_status (1, 3, unoccupied_slot)
-			set_status (1, 5, unoccupied_slot)
-			set_statuses (4, 4, 5, 7, unoccupied_slot)
-			set_statuses (4, 4, 1, 3, unoccupied_slot)
-			set_status (1, 4, occupied_slot)
-			set_status (2, 3, occupied_slot)
-			set_statuses (5, 5, 1, 3, unoccupied_slot)
-			set_statuses (5, 5, 5, 7, unoccupied_slot)
+			make_default
+			set_statuses (1, 7, 1, 7, unoccupied_slot)
+			set_statuses (1, 1, 1, 2, unavailable_slot)
+			set_statuses (1, 1,6,7,unavailable_slot)
+			set_statuses (2, 2, 1, 2, unavailable_slot)
+			set_statuses (2, 2, 6, 7, unavailable_slot)
+			set_statuses (6, 6, 1, 2, unavailable_slot)
+			set_statuses (6, 6, 6, 7, unavailable_slot)
+			set_statuses (7, 7, 1, 2, unavailable_slot)
+			set_statuses (7, 7, 6, 7, unavailable_slot)
+			set_status (1,4, occupied_slot)
+			set_statuses (2, 2, 3, 5, occupied_slot)
 			set_statuses (3, 3, 2, 6, occupied_slot)
 			set_status (4, 4, occupied_slot)
-			set_status (2, 5, occupied_slot)
-			set_statuses (7, 7, 3, 5, occupied_slot)
+			set_status (5, 4, occupied_slot)
 			set_statuses (6, 6, 3, 5, occupied_slot)
+			set_statuses (7, 7, 3, 5, occupied_slot)
 			ensure
 			board_set:
 				current ~ bta.templates.arrow_board
@@ -139,24 +143,23 @@ feature -- Constructor
 	make_diamond
 			-- Initialize a Diamond board.
 		do
-			make_easy
-			set_status (1, 3, unoccupied_slot)
-			set_status (1, 5, unoccupied_slot)
-			set_status (3, 7, unoccupied_slot)
-			set_status (4, 4, unoccupied_slot)
-			set_status (1, 4, occupied_slot)
-			set_status (3, 1, unoccupied_slot)
-			set_status (5, 7, unoccupied_slot)
-			set_status (5, 1, unoccupied_slot)
-			set_status (7, 5, unoccupied_slot)
-			set_status (7, 3, unoccupied_slot)
-			set_status (2, 5, occupied_slot)
-			set_status (2, 3, occupied_slot)
-			set_statuses (5, 5, 2, 6, occupied_slot)
-			set_statuses (6, 6, 3, 5, occupied_slot)
-			set_statuses (4, 4, 5, 7, occupied_slot)
+			make_default
+			set_statuses (1, 7, 1, 7, unoccupied_slot)
+			set_statuses (1, 1, 1, 2, unavailable_slot)
+			set_statuses (1, 1, 6, 7,unavailable_slot)
+			set_statuses (2, 2, 1, 2, unavailable_slot)
+			set_statuses (2, 2, 6, 7, unavailable_slot)
+			set_statuses (6, 6, 1, 2, unavailable_slot)
+			set_statuses (6, 6, 6, 7, unavailable_slot)
+			set_statuses (7, 7, 1, 2, unavailable_slot)
+			set_statuses (7, 7, 6, 7, unavailable_slot)
+			set_status (1,4, occupied_slot)
+			set_statuses (2, 2, 3, 5, occupied_slot)
 			set_statuses (3, 3, 2, 6, occupied_slot)
 			set_statuses (4, 4, 1, 3, occupied_slot)
+			set_statuses (4, 4, 5, 7, occupied_slot)
+			set_statuses (5, 5, 2, 6, occupied_slot)
+			set_statuses (6, 6, 3, 5, occupied_slot)
 			set_status (7, 4, occupied_slot)
 		ensure
 			board_set:
@@ -166,17 +169,22 @@ feature -- Constructor
 	make_skull
 			-- Initialize a Skull board.
 		do
-			make_easy
-			set_status (4, 3, unoccupied_slot)
-			set_status (4, 5, unoccupied_slot)
+			make_default
+			set_statuses (1, 7, 1, 7, unoccupied_slot)
+			set_statuses (1, 1, 1, 2, unavailable_slot)
+			set_statuses (1, 1, 6, 7,unavailable_slot)
+			set_statuses (2, 2, 1, 2, unavailable_slot)
+			set_statuses (2, 2, 6, 7, unavailable_slot)
+			set_statuses (6, 6, 1, 2, unavailable_slot)
+			set_statuses (6, 6, 6, 7, unavailable_slot)
+			set_statuses (7, 7, 1, 2, unavailable_slot)
+			set_statuses (7, 7, 6, 7, unavailable_slot)
+			set_statuses (1, 1, 3, 5, occupied_slot)
+			set_statuses (2, 2, 3, 5, occupied_slot)
+			set_statuses (3, 3, 2, 6, occupied_slot)
 			set_status (4, 2, occupied_slot)
 			set_status (4, 4, occupied_slot)
 			set_status (4, 6, occupied_slot)
-			set_statuses (1, 1, 3, 5, occupied_slot)
-			set_statuses (2, 2, 3, 5, occupied_slot)
-			set_statuses (3, 5, 1, 1, unoccupied_slot)
-			set_statuses (3, 5, 7, 7, unoccupied_slot)
-			set_statuses (3, 3, 2, 6, occupied_slot)
 			set_statuses (5, 5, 2, 6, occupied_slot)
 			set_statuses (6, 6, 3, 5, occupied_slot)
 			set_statuses (7, 7, 3, 5, occupied_slot)

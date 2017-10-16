@@ -21,36 +21,36 @@ void _A143_159_2 (void(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALU
 	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) F143_7027)(closed [1].it_r, open [1]);
 }
 
-	/* HASH_TABLE [G#1, INTEGER_32] has */
-EIF_TYPED_VALUE _A338_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+	/* HASH_TABLE [INTEGER_32, INTEGER_32] has */
+EIF_TYPED_VALUE _A307_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
 }
 
 	/* HASH_TABLE [G#1, G#2] has */
-EIF_TYPED_VALUE _A372_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+EIF_TYPED_VALUE _A360_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
 }
 
-	/* HASH_TABLE [INTEGER_32, G#2] has */
-EIF_TYPED_VALUE _A382_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+	/* HASH_TABLE [G#1, INTEGER_32] has */
+EIF_TYPED_VALUE _A367_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
 }
 
 	/* HASH_TABLE [NATURAL_32, POINTER] has */
-EIF_TYPED_VALUE _A449_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+EIF_TYPED_VALUE _A612_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
 }
 
-	/* HASH_TABLE [INTEGER_32, INTEGER_32] has */
-EIF_TYPED_VALUE _A906_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+	/* HASH_TABLE [INTEGER_32, G#2] has */
+EIF_TYPED_VALUE _A955_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
@@ -93,11 +93,39 @@ EIF_TYPED_VALUE _A976_78 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VA
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5101, "test_easy_game_creation", closed [1].it_r))(closed [1].it_r);
 }
 
-	/* TEST_BAD_PLAYER test_bad_player_loses_easy_board */
-EIF_TYPED_VALUE _A977_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+	/* BAD_PLAYER_TESTS test_loss_pyramid_board */
+EIF_TYPED_VALUE _A977_78 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5103, "test_bad_player_loses_easy_board", closed [1].it_r))(closed [1].it_r);
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5104, "test_loss_pyramid_board", closed [1].it_r))(closed [1].it_r);
+}
+
+	/* GOOD_PLAYER_TESTS test_game_won_plus_board */
+EIF_TYPED_VALUE _A978_78 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5107, "test_game_won_plus_board", closed [1].it_r))(closed [1].it_r);
+}
+
+	/* GOOD_PLAYER_TESTS test_board_out */
+EIF_TYPED_VALUE _A978_79 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5108, "test_board_out", closed [1].it_r))(closed [1].it_r);
+}
+
+	/* GOOD_PLAYER_TESTS test_move_left_precondition */
+void _A978_80 (void(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTVF(5109, "test_move_left_precondition", closed [1].it_r))(closed [1].it_r);
+}
+
+	/* TEST_BAD_PLAYER test_bad_player_loses_easy_board */
+EIF_TYPED_VALUE _A979_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5111, "test_bad_player_loses_easy_board", closed [1].it_r))(closed [1].it_r);
 }
 
 

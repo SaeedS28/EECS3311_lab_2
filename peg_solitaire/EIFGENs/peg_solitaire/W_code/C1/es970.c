@@ -83,7 +83,7 @@ void F970_7219 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x, EIF_TYPED_VALUE ar
 	RTCC(arg1, 969, l_feature_name, 1, eif_new_type(231, 0x01), 0x01);
 	RTCC(arg2, 969, l_feature_name, 2, eif_new_type(231, 0x01), 0x01);
 	{
-		static EIF_TYPE_INDEX typarr0[] = {0xFF01,323,0xFF01,973,0xFFFF};
+		static EIF_TYPE_INDEX typarr0[] = {0xFF01,465,0xFF01,973,0xFFFF};
 		EIF_TYPE typres0;
 		static EIF_TYPE typcache0 = {INVALID_DTYPE, 0};
 		
@@ -97,7 +97,7 @@ void F970_7219 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x, EIF_TYPED_VALUE ar
 	ub1 = arg4;
 	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE, EIF_TYPED_VALUE, EIF_TYPED_VALUE)) RTWF(5014, dtype))(Current, ur1x, ur2x, ub1x);
 	RTHOOK(2);
-	RTDBGAA(Current, dtype, 5044, 0xF8000143, 0); /* test_classes */
+	RTDBGAA(Current, dtype, 5044, 0xF80001D1, 0); /* test_classes */
 	RTAR(Current, arg3);
 	*(EIF_REFERENCE *)(Current + RTWA(5044, dtype)) = (EIF_REFERENCE) RTCCL(arg3);
 	RTHOOK(3);
@@ -275,10 +275,10 @@ void F970_7221 (EIF_REFERENCE Current)
 					RTCF0;
 				}
 				RTHOOK(16);
-				tb3 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5209, "is_violation_case", loc4))(loc4)).it_b);
+				tb3 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5217, "is_violation_case", loc4))(loc4)).it_b);
 				if (tb3) {
 					RTHOOK(17);
-					tb3 = *(EIF_BOOLEAN *)(loc4 + RTVA(5212, "passed", loc4));
+					tb3 = *(EIF_BOOLEAN *)(loc4 + RTVA(5220, "passed", loc4));
 					if (tb3) {
 						RTHOOK(18);
 						RTDBGAA(Current, dtype, 5039, 0x10000000, 1); /* number_passed_violation */
@@ -292,7 +292,7 @@ void F970_7221 (EIF_REFERENCE Current)
 					(*(EIF_INTEGER_32 *)(Current + RTWA(5038, dtype)))++;
 				} else {
 					RTHOOK(21);
-					tb3 = *(EIF_BOOLEAN *)(loc4 + RTVA(5212, "passed", loc4));
+					tb3 = *(EIF_BOOLEAN *)(loc4 + RTVA(5220, "passed", loc4));
 					if (tb3) {
 						RTHOOK(22);
 						RTDBGAA(Current, dtype, 5037, 0x10000000, 1); /* number_passed_boolean */
@@ -389,7 +389,7 @@ void F970_7222 (EIF_REFERENCE Current)
 	loc3 = RTCCL(tr1);
 	if (EIF_TEST(loc3)) {
 		RTHOOK(2);
-		RTDBGAL(Current, 2, 0xF8000147, 0, 0); /* loc4 */
+		RTDBGAL(Current, 2, 0xF80001CE, 0, 0); /* loc4 */
 		tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(2501, "new_cursor", loc3))(loc3)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 		loc4 = (EIF_REFERENCE) RTCCL(tr1);
 		RTHOOK(3);
@@ -445,7 +445,7 @@ void F970_7222 (EIF_REFERENCE Current)
 				loc6 = RTCCL(tr1);
 				if (EIF_TEST(loc6)) {
 					RTHOOK(14);
-					RTDBGAL(Current, 5, 0xF8000147, 0, 0); /* loc7 */
+					RTDBGAL(Current, 5, 0xF80001CE, 0, 0); /* loc7 */
 					tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(2501, "new_cursor", loc6))(loc6)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 					loc7 = (EIF_REFERENCE) RTCCL(tr1);
 					for (;;) {

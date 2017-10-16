@@ -1,5 +1,5 @@
 /*
- * Code for class BOARD_TEMPLATES_ACCESS
+ * Code for class reference BOARD_TEMPLATES_ACCESS
  */
 
 #include "eif_eiffel.h"
@@ -10,8 +10,8 @@
 extern "C" {
 #endif
 
-extern EIF_TYPED_VALUE F964_7169(EIF_REFERENCE);
-extern void F964_7796(EIF_REFERENCE, int);
+extern EIF_TYPED_VALUE F964_7150(EIF_REFERENCE);
+extern void F964_7804(EIF_REFERENCE, int);
 extern void EIF_Minit964(void);
 
 #ifdef __cplusplus
@@ -34,8 +34,8 @@ extern "C" {
 #endif
 
 /* {BOARD_TEMPLATES_ACCESS}.templates */
-RTOID (F964_7169)
-EIF_TYPED_VALUE F964_7169 (EIF_REFERENCE Current)
+RTOID (F964_7150)
+EIF_TYPED_VALUE F964_7150 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "templates";
@@ -46,7 +46,7 @@ EIF_TYPED_VALUE F964_7169 (EIF_REFERENCE Current)
 	RTLD;
 	
 #define Result RTOTRR
-	RTOTDR(F964_7169);
+	RTOTDR(F964_7150);
 
 	RTLI(2);
 	RTLR(0,tr1);
@@ -55,18 +55,18 @@ EIF_TYPED_VALUE F964_7169 (EIF_REFERENCE Current)
 	RTLU (SK_REF, &Result);
 	RTLU (SK_REF, &Current);
 	
-	RTEAA(l_feature_name, 963, Current, 0, 0, 13448);
+	RTEAA(l_feature_name, 963, Current, 0, 0, 13431);
 	RTSA(Dtype(Current));
 	RTSC;
 	RTME(Dtype(Current), 0);
 	RTGC;
-	RTDBGEAA(963, Current, 13448);
+	RTDBGEAA(963, Current, 13431);
 	RTIV(Current, RTAL);
 	RTOTP;
 	RTHOOK(1);
-	RTDBGAL(Current, 0, 0xF80003C1, 0,0); /* Result */
-	tr1 = RTLN(eif_new_type(961, 0x01).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4965, Dtype(tr1)))(tr1);
+	RTDBGAL(Current, 0, 0xF80003C0, 0,0); /* Result */
+	tr1 = RTLN(eif_new_type(960, 0x01).id);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4942, Dtype(tr1)))(tr1);
 	RTNHOOK(1,1);
 	Result = (EIF_REFERENCE) RTCCL(tr1);
 	RTVI(Current, RTAL);
@@ -83,7 +83,7 @@ EIF_TYPED_VALUE F964_7169 (EIF_REFERENCE Current)
 }
 
 /* {BOARD_TEMPLATES_ACCESS}._invariant */
-void F964_7796 (EIF_REFERENCE Current, int where)
+void F964_7804 (EIF_REFERENCE Current, int where)
 {
 	GTCX
 	char *l_feature_name = "_invariant";
@@ -105,12 +105,12 @@ void F964_7796 (EIF_REFERENCE Current, int where)
 	RTLIU(3);
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
-	RTEAINV(l_feature_name, 963, Current, 0, 7795);
+	RTEAINV(l_feature_name, 963, Current, 0, 7803);
 	RTSA(dtype);
 	RTME(dtype, 0);
 	RTIT("singleton_templates", Current);
-	tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5000, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
-	tr2 = ((up2x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5000, dtype))(Current)), (((up2x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up2x.it_r = RTBU(up2x))), (up2x.type = SK_POINTER), up2x.it_r);
+	tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(4982, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
+	tr2 = ((up2x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(4982, dtype))(Current)), (((up2x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up2x.it_r = RTBU(up2x))), (up2x.type = SK_POINTER), up2x.it_r);
 	if (RTCEQ(tr1, tr2)) {
 		RTCK;
 	} else {
@@ -127,7 +127,7 @@ void F964_7796 (EIF_REFERENCE Current, int where)
 void EIF_Minit964 (void)
 {
 	GTCX
-	RTOTS (7169,F964_7169)
+	RTOTS (7150,F964_7150)
 }
 
 

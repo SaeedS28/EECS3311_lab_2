@@ -11,7 +11,7 @@ case "$O" in
 esac
 echo "Compiling C code in C2"
 $spitshell >Makefile <<!GROK!THIS!
-INCLUDE_PATH =  -I"\$(ISE_LIBRARY)\library\time\spec\include"
+INCLUDE_PATH =  -I"\$(ISE_LIBRARY)/library/time/spec/include"
 SHELL = /bin/sh
 CC = $cc
 CPP = $cpp
@@ -55,14 +55,15 @@ $spitshell >>Makefile <<'!NO!SUBS!'
 
 OBJECTS = big_file_C2_c.o 
 
-OLDOBJECTS =  ty1014.o ty1014d.o ty1016.o ty1016d.o ar1017.o ar1017d.o ba994.o \
-	ba994d.o pl992.o pl992d.o es995.o es995d.o es997.o es997d.o es996.o \
-	es996d.o oc991.o oc991d.o un990.o un990d.o ti1010.o ti1010d.o \
-	da1008.o da1008d.o da1006.o da1006d.o ti1001.o ti1001d.o ab1002.o \
-	ab1002d.o ti1009.o ti1009d.o da1000.o da1000d.o da1013.o da1013d.o \
-	da1004.o da1004d.o da1007.o da1007d.o da1003.o da1003d.o da1012.o \
-	da1012d.o fi1005.o fi1005d.o du998.o du998d.o in1015.o in1015d.o \
-	da999.o da999d.o da1011.o da1011d.o go993.o go993d.o 
+OLDOBJECTS =  ty1017.o ty1017d.o ty1018.o ty1018d.o ar1019.o ar1019d.o ba996.o \
+	ba996d.o go995.o go995d.o pl994.o pl994d.o es999.o es999d.o es997.o \
+	es997d.o es998.o es998d.o un990.o un990d.o oc993.o oc993d.o un992.o \
+	un992d.o da1012.o da1012d.o ti1010.o ti1010d.o av991.o av991d.o \
+	da1015.o da1015d.o da1003.o da1003d.o da1008.o da1008d.o ab1004.o \
+	ab1004d.o da1006.o da1006d.o da1011.o da1011d.o ti1002.o ti1002d.o \
+	ti1009.o ti1009d.o da1001.o da1001d.o da1013.o da1013d.o du1000.o \
+	du1000d.o da1005.o da1005d.o da1014.o da1014d.o fi1007.o fi1007d.o \
+	in1016.o in1016d.o 
 
 all: Cobj2.o
 

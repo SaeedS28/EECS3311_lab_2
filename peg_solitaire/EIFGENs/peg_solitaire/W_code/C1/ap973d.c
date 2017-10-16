@@ -24,9 +24,9 @@ static const EIF_TYPE_INDEX egt_11_973 [] = {0xFF01,15,0xFFFF};
 static const EIF_TYPE_INDEX egt_12_973 [] = {0xFF01,972,0xFFFF};
 static const EIF_TYPE_INDEX egt_13_973 [] = {0xFF01,160,0xFFFF};
 static const EIF_TYPE_INDEX egt_14_973 [] = {0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_15_973 [] = {0xFF01,274,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_16_973 [] = {0xFF01,274,0xFF01,231,0xFFFF};
-static const EIF_TYPE_INDEX egt_17_973 [] = {323,0xFF01,973,0xFFFF};
+static const EIF_TYPE_INDEX egt_15_973 [] = {0xFF01,284,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_16_973 [] = {0xFF01,284,0xFF01,231,0xFFFF};
+static const EIF_TYPE_INDEX egt_17_973 [] = {465,0xFF01,973,0xFFFF};
 
 
 static const struct desc_info desc_973[] = {
@@ -97,8 +97,8 @@ void Init973(void)
 	IDSC(desc_973, 0, 972);
 	IDSC(desc_973 + 1, 1, 972);
 	IDSC(desc_973 + 32, 307, 972);
-	IDSC(desc_973 + 33, 365, 972);
-	IDSC(desc_973 + 52, 359, 972);
+	IDSC(desc_973 + 33, 368, 972);
+	IDSC(desc_973 + 52, 361, 972);
 	IDSC(desc_973 + 60, 355, 972);
 }
 

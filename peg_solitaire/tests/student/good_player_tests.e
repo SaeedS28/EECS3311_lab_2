@@ -52,7 +52,7 @@ feature -- Tests
 
 test_board_out: BOOLEAN
 		local
-			cross,arrow,diamond,pyramid,skull: GOOD_PLAYER
+			cross,arrow,plus,diamond,pyramid,skull: GOOD_PLAYER
 		do
 			comment ("test: tests the initialization of different boards using the out feature")
 
@@ -61,9 +61,14 @@ test_board_out: BOOLEAN
 			create diamond.make
 			create pyramid.make
 			create skull.make
+			create plus.make
 
 			cross.game.make_cross
 			Result:= cross.game.board.out ~ cross.game.bta.templates.cross_board_out
+			check Result end
+
+			plus.game.make_plus
+			Result:= plus.game.board.out ~ plus.game.bta.templates.plus_board_out
 			check Result end
 
 			arrow.game.make_arrow
@@ -77,7 +82,13 @@ test_board_out: BOOLEAN
 			pyramid.game.make_pyramid
 			Result:= pyramid.game.board.out ~ pyramid.game.bta.templates.pyramid_board_out
 			check Result end
-
+--**OOO**
+--**OOO**
+--.OOOOO.
+--.O.O.O.
+--.......
+--**OOO**
+--**OOO**
 			skull.game.make_skull
 			Result:= skull.game.board.out ~ skull.game.bta.templates.skull_board_out
 			check Result end

@@ -1,5 +1,5 @@
 /*
- * Code for class UNOCCUPIED_SLOT
+ * Code for class UNAVAILABLE_SLOT
  */
 
 #include "eif_eiffel.h"
@@ -10,8 +10,8 @@
 extern "C" {
 #endif
 
-extern void F990_7390(EIF_REFERENCE);
-extern EIF_TYPED_VALUE F990_7391(EIF_REFERENCE);
+extern void F990_7396(EIF_REFERENCE);
+extern EIF_TYPED_VALUE F990_7397(EIF_REFERENCE);
 extern void EIF_Minit990(void);
 
 #ifdef __cplusplus
@@ -33,8 +33,8 @@ extern "C" {
 extern "C" {
 #endif
 
-/* {UNOCCUPIED_SLOT}.make */
-void F990_7390 (EIF_REFERENCE Current)
+/* {UNAVAILABLE_SLOT}.make */
+void F990_7396 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "make";
@@ -49,12 +49,12 @@ void F990_7390 (EIF_REFERENCE Current)
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
 	
-	RTEAA(l_feature_name, 989, Current, 0, 0, 13638);
+	RTEAA(l_feature_name, 989, Current, 0, 0, 13644);
 	RTSA(Dtype(Current));
 	RTSC;
 	RTME(Dtype(Current), 0);
 	RTGC;
-	RTDBGEAA(989, Current, 13638);
+	RTDBGEAA(989, Current, 13644);
 	RTIV(Current, RTAL);
 	RTVI(Current, RTAL);
 	RTRS;
@@ -66,8 +66,8 @@ void F990_7390 (EIF_REFERENCE Current)
 	RTEE;
 }
 
-/* {UNOCCUPIED_SLOT}.out */
-EIF_TYPED_VALUE F990_7391 (EIF_REFERENCE Current)
+/* {UNAVAILABLE_SLOT}.out */
+EIF_TYPED_VALUE F990_7397 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "out";
@@ -92,12 +92,12 @@ EIF_TYPED_VALUE F990_7391 (EIF_REFERENCE Current)
 	RTLU (SK_REF, &Result);
 	RTLU (SK_REF, &Current);
 	
-	RTEAA(l_feature_name, 989, Current, 0, 0, 13639);
+	RTEAA(l_feature_name, 989, Current, 0, 0, 13645);
 	RTSA(dtype);
 	RTSC;
 	RTME(dtype, 0);
 	RTGC;
-	RTDBGEAA(989, Current, 13639);
+	RTDBGEAA(989, Current, 13645);
 	RTIV(Current, RTAL);
 	RTHOOK(1);
 	RTDBGAL(Current, 0, 0xF80000E7, 0,0); /* Result */
@@ -107,7 +107,7 @@ EIF_TYPED_VALUE F990_7391 (EIF_REFERENCE Current)
 	Result = (EIF_REFERENCE) RTCCL(tr1);
 	RTHOOK(2);
 	RTDBGAL(Current, 0, 0xF80000E7, 0,0); /* Result */
-	Result = RTMS_EX_H(".",1,46);
+	Result = RTMS_EX_H("*",1,42);
 	if (RTAL & CK_ENSURE) {
 		RTHOOK(3);
 		RTCT("out_not_void", EX_POST);
@@ -118,7 +118,7 @@ EIF_TYPED_VALUE F990_7391 (EIF_REFERENCE Current)
 		}
 		RTHOOK(4);
 		RTCT("correct_result", EX_POST);
-		tr1 = RTMS_EX_H(".",1,46);
+		tr1 = RTMS_EX_H("*",1,42);
 		ur1 = tr1;
 		tb1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(11, "is_equal", Result))(Result, ur1x)).it_b);
 		if (tb1) {

@@ -983,6 +983,8 @@ struct eif_opt egc_foption_init[] = {
 {63, 0, 0, {OPT_ALL, 0, NULL}},
 {63, 0, 0, {OPT_ALL, 0, NULL}},
 {63, 0, 0, {OPT_ALL, 0, NULL}},
+{63, 0, 0, {OPT_ALL, 0, NULL}},
+{63, 0, 0, {OPT_ALL, 0, NULL}},
 {0, 0, 0, {OPT_ALL, 0, NULL}},
 {0, 0, 0, {OPT_ALL, 0, NULL}},
 {0, 0, 0, {OPT_ALL, 0, NULL}},
