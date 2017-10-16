@@ -278,7 +278,7 @@ feature -- Auxiliary Queries
 				loop
 					if	(n.item < c1 or n.item > c2) or (m.item < r1 or m.item > r2)
 					then
-						Result:= Result and Current.status_of (n.item, m.item).is_equal (other.status_of (n.item, m.item))
+						Result:= Current.status_of (n.item, m.item) ~ other.status_of (n.item, m.item)
 				end
 			end
 			end
@@ -400,46 +400,34 @@ feature -- Equality
 feature -- Output
 	out: STRING
 			-- String representation of current board.
-		local
-			i: INTEGER
-			j: INTEGER
 		do
 			create Result.make_empty
-			-- Your task: the current implementation
-			-- may not be correct.
-			-- No postcondition is needed for this query.
 
 			--Result := Current.out
-			from
-				i := 1
-			until
-				i > current.number_of_rows
+			across
+				1|..| number_of_rows as m
 			loop
-				from
-					j := 1
-				until
-					j > current.number_of_columns
+				across
+					 1 |..| number_of_columns as n
 				loop
-					if imp.item (i, j) ~ ssa.occupied_slot
-					then
-						Result.append ("O")
-					end
-
-					if imp.item (i, j) ~ ssa.unoccupied_slot
-					then
-						Result.append (".")
-					end
-
-					if imp.item (i, j) ~ ssa.unavailable_slot
+					if imp.item (m.item, n.item) ~ ssa.unavailable_slot
 					then
 						Result.append ("*")
 					end
 
-					j := j + 1
+					if imp.item (m.item, n.item) ~ ssa.occupied_slot
+					then
+						Result.append ("O")
+					end
+
+					if imp.item (m.item, n.item) ~ ssa.unoccupied_slot
+					then
+						Result.append (".")
+					end
 				end
 				Result.append ("%N")
-				i := i + 1
 			end
+
 			Result.remove_tail (1)
 
 		end

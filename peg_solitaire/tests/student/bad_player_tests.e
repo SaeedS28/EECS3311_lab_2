@@ -20,6 +20,8 @@ feature -- Constructor
 	make
 		do
 			add_boolean_case (agent test_loss_pyramid_board)
+			add_boolean_case (agent test_loss_arrow)
+			add_boolean_case (agent test_loss_diamond)
 		end
 
 feature -- Tests
@@ -51,4 +53,34 @@ feature -- Tests
 
 	end
 
-end
+	test_loss_arrow: BOOLEAN
+	local
+			player: BAD_PLAYER
+		do
+			comment ("test: bad player loses an arrow board")
+			create player.make
+
+			player.game.make_arrow
+			player.loses_arrow_game
+			Result :=
+					player.game.is_over
+				and not player.game.is_won
+			check Result end
+		end
+
+
+	test_loss_diamond: BOOLEAN
+	local
+			player: BAD_PLAYER
+		do
+			comment ("test: bad player loses a diamond board")
+			create player.make
+
+			player.game.make_diamond
+			player.loses_diamond_game
+			Result :=
+					player.game.is_over
+				and not player.game.is_won
+			check Result end
+		end
+	end

@@ -20,7 +20,9 @@ feature -- Constructor
 		do
 			add_boolean_case (agent test_game_won_plus_board)
 			add_boolean_case (agent test_board_out)
+			add_boolean_case (agent test_game_won_cross_board)
 			add_violation_case_with_tag ("middle_slot_occupied",  agent test_move_left_precondition)
+			add_violation_case_with_tag ("correct_result", agent test_bad_matches_slot_except_postcondition)
 		end
 
 feature -- Tests
@@ -48,6 +50,21 @@ feature -- Tests
 				Result :=
 		 		g.is_over and g.is_won
 				check Result end
+		end
+
+test_game_won_cross_board: BOOLEAN
+		local
+			player: GOOD_PLAYER
+		do
+			comment ("test: cross board won and over")
+			create player.make
+
+			player.game.make_cross
+			player.wins_cross_board
+			Result :=
+					player.game.is_over
+				and player.game.is_won
+			check Result end
 		end
 
 test_board_out: BOOLEAN
@@ -82,13 +99,7 @@ test_board_out: BOOLEAN
 			pyramid.game.make_pyramid
 			Result:= pyramid.game.board.out ~ pyramid.game.bta.templates.pyramid_board_out
 			check Result end
---**OOO**
---**OOO**
---.OOOOO.
---.O.O.O.
---.......
---**OOO**
---**OOO**
+
 			skull.game.make_skull
 			Result:= skull.game.board.out ~ skull.game.bta.templates.skull_board_out
 			check Result end
@@ -114,5 +125,16 @@ test_move_left_precondition
 --				check Result end
 		end
 
+test_bad_matches_slot_except_postcondition
+        local
+            board: BOARD
+            board2: BAD_MATCHES_SLOT_EXCEPT
+            test: BOOLEAN
+        do
+            comment ("test: matches_slots_except postcondition violation")
+            create board.make_diamond
+            create board2.make
+            test:=  board2.matches_slots_except (board, 1, 1, 1, 1)
+        end
 
 end

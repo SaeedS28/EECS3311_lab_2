@@ -74,7 +74,8 @@ feature -- Commands
 			-- Win a cross board.
 		require
 			current_game_is_cross:
-				game.board.out~game.bta.templates.cross_board.out
+				current.game.board ~ templates.cross_board
+
 		local
 			assertion: BOOLEAN
 		do
@@ -138,15 +139,13 @@ feature -- Commands
 			check assertion end
 
 			game.move_left (3, 6)
-			game.move_right (3, 3)
-
 			assertion := game.out ~ "[
 			Game is over: No
 			Game is won : No
 			Board Status:
 			**...**
 			**.O.**
-			....OO.
+			...O...
 			.......
 			.......
 			**...**
@@ -160,7 +159,7 @@ feature -- Commands
 			Game is won : Yes
 			Board Status:
 			**...**
-		 	**...**
+			**...**
 			.......
 			...O...
 			.......
@@ -168,6 +167,7 @@ feature -- Commands
 			**...**
 			]"
 			check assertion end
+
 		ensure
 			finished_and_won_game:
 				game.is_over and game.is_won
@@ -208,7 +208,7 @@ feature -- Commands
 			   **.O.**
 			   **...**
 			   ]"
-				check assertion end
+			check assertion end
 
 			game.move_left (4,5)
 			assertion := game.out ~ "[
@@ -223,7 +223,7 @@ feature -- Commands
 			   **.O.**
 			   **...**
 			   ]"
-				check assertion end
+			check assertion end
 
 			game.move_up (6,4)
 			assertion := game.out ~ "[
@@ -238,7 +238,7 @@ feature -- Commands
 			   **...**
 			   **...**
 			   ]"
-				check assertion end
+			check assertion end
 
 			game.move_left (4,4)
 			assertion := game.out ~ "[
@@ -253,7 +253,7 @@ feature -- Commands
 			   **...**
 			   **...**
 			   ]"
-				check assertion end
+			check assertion end
 
 			game.move_right (4,1)
 			assertion := game.out ~ "[
@@ -268,7 +268,7 @@ feature -- Commands
 			   **...**
 			   **...**
 			   ]"
-				check assertion end
+			check assertion end
 
 			game.move_down (2,4)
 			assertion := game.out ~ "[
@@ -283,7 +283,7 @@ feature -- Commands
 			   **...**
 			   **...**
 			   ]"
-				check assertion	end
+			check assertion	end
 
 			game.move_right (4,3)
 			assertion := game.out ~ "[
@@ -298,7 +298,7 @@ feature -- Commands
 			   **...**
 			   **...**
 		       ]"
-				check assertion end
+			check assertion end
 
 			game.move_left (4,6)
 			assertion := game.out ~ "[
@@ -313,7 +313,7 @@ feature -- Commands
 			   **...**
 			   **...**
 			   ]"
-				check assertion end
+			check assertion end
 		ensure
 			finished_and_won_game:
 				game.is_over and game.is_won

@@ -99,17 +99,24 @@ feature -- Constructors
 feature -- Commands
 	move_left (r, c: INTEGER)
 		require
-		from_slot_valid_row: board.is_valid_row (r)
-			from_slot_valid_column: (c >= 3) and c <= 7
-			middle_slot_valid_column: (c - 1 >= 2) and (c - 1 <= 6)
-			to_slot_valid_column: (c - 2 >= 1) and (c - 2 <= 5)
-			from_slot_occupied: board.status_of (r, c) ~ board.occupied_slot
-			middle_slot_occupied: board.status_of (r, c - 1) ~ board.occupied_slot
-			to_slot_unoccupied: board.status_of (r, c - 2) ~ board.unoccupied_slot
+			from_slot_valid_row:
+				board.is_valid_row (r)
+			from_slot_valid_column:
+				c > 2 and c <= 7
+			middle_slot_valid_column:
+				c - 1 >1 and c - 1 < 7
+			to_slot_valid_column:
+				c - 2 >= 1 and c - 2 < 6
+			from_slot_occupied:
+				board.status_of (r, c) ~ board.occupied_slot
+			middle_slot_occupied: board.status_of
+				(r, c - 1) ~ board.occupied_slot
+			to_slot_unoccupied:
+				board.status_of (r, c - 2) ~ board.unoccupied_slot
 		do
 			board.set_status (r, c, board.unoccupied_slot)
-			board.set_status (r, c-1, board.unoccupied_slot)
-			board.set_status (r, c-2, board.occupied_slot)
+			board.set_status (r, c - 1, board.unoccupied_slot)
+			board.set_status (r, c - 2, board.occupied_slot)
 		ensure
 			slots_properly_set:
 				board.status_of (r, c) ~ board.unoccupied_slot
@@ -117,41 +124,54 @@ feature -- Commands
 				and board.status_of (r, c - 2) ~ board.occupied_slot
 			other_slots_unchanged:
 				board.matches_slots_except (board, r, r, c, c - 2)
-		end
+end
+
 
 	move_right (r, c: INTEGER)
 		require
-			from_slot_valid_row: board.is_valid_row (r)
-			from_slot_valid_column: (c >= 1) and (c <= 5)
-			middle_slot_valid_column: (c + 1) >= 2 and (c + 1 <= 6)
-			to_slot_valid_column: (c + 2) >= 3 and (c + 2) <= 7
+			from_slot_valid_row:
+				board.is_valid_row (r)
+			from_slot_valid_column:
+				c >= 1 and c <6
+			middle_slot_valid_column:
+				c + 1 >= 2 and c + 1 <7
+			to_slot_valid_column:
+				c + 2 >2 and c + 2 <= 7
 			from_slot_occupied: board.status_of (r, c) ~ board.occupied_slot
 			middle_slot_occupied: board.status_of (r, c + 1) ~ board.occupied_slot
 			to_slot_unoccupied: board.status_of (r, c + 2) ~ board.unoccupied_slot
 		do
-			board.set_status (r, c+2, board.occupied_slot)
-			board.set_statuses (r, r, c, c+1, board.unoccupied_slot)
+			board.set_status (r, c, board.unoccupied_slot)
+			board.set_status (r, c + 1, board.unoccupied_slot)
+			board.set_status (r, c + 2, board.occupied_slot)
 		ensure
 			slots_properly_set:
-				board.status_of (r, c)~board.unoccupied_slot
-				and board.status_of (r, c+1)~board.unoccupied_slot
-				and board.status_of (r, c+2)~board.occupied_slot
+				board.status_of (r, c) ~ board.unoccupied_slot
+				and board.status_of (r, c + 1) ~ board.unoccupied_slot
+				and board.status_of (r, c + 2) ~ board.occupied_slot
 			other_slots_unchanged:
-				board.matches_slots_except (board, r, r, c, c+2)
-		end
+				board.matches_slots_except (board, r, r, c, c + 2)
+end
 
 	move_up (r, c: INTEGER)
 		require
-			from_slot_valid_column: board.is_valid_column (c)
-			from_slot_valid_row: r >= 3 and r <= 7
-			middle_slot_valid_row: r - 1 >= 2 and r-1 <= 6
-			to_slot_valid_row: r - 2 >= 1 and r-2 <= 5
-			from_slot_occupied: board.status_of (r, c) ~ board.occupied_slot
-			middle_slot_occupied: board.status_of (r - 1, c) ~ board.occupied_slot
-			to_slot_unoccupied: board.status_of (r - 2, c) ~ board.unoccupied_slot
+			from_slot_valid_column:
+				board.is_valid_column (c)
+			from_slot_valid_row:
+				r >2 and r <= 7
+			middle_slot_valid_row:
+				r - 1 >=2 and r-1 <7
+			to_slot_valid_row:
+				r - 2 >= 1 and r-2 < 6
+			from_slot_occupied:
+				board.status_of (r, c) ~ board.occupied_slot
+			middle_slot_occupied:
+				board.status_of (r - 1, c) ~ board.occupied_slot
+			to_slot_unoccupied:
+				board.status_of (r - 2, c) ~ board.unoccupied_slot
 		do
 			board.set_status (r - 2,c,board.occupied_slot)
-			board.set_statuses (r - 1, r, c, c, board.unoccupied_slot)
+			board.set_statuses (r - 1, r,c,c,board.unoccupied_slot)
 		ensure
 			slots_properly_set:
 				board.status_of (r, c)~board.unoccupied_slot
@@ -166,11 +186,11 @@ feature -- Commands
 			from_slot_valid_column:
 				board.is_valid_column (c)
 			from_slot_valid_row:
-				board.is_valid_row (r)
+				r >= 1 and r <6
 			middle_slot_valid_row:
-				board.is_valid_row (r+1)
+				r + 1 >= 2 and r + 1 <7
 			to_slot_valid_row:
-				board.is_valid_row (r+2)
+				r + 2 >2 and r + 2 <= 7
 			from_slot_occupied:
 				board.status_of (r, c)~board.occupied_slot
 			middle_slot_occupied:
