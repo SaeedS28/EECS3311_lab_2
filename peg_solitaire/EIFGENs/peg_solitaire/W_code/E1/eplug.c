@@ -113,7 +113,7 @@ void egc_init_plug (void)
 	egc_forg_table = egc_forg_table_init;
 
 	egc_system_name = "peg_solitaire";
-	egc_system_location = "C:\\Users\\Saad\\OneDrive\\Documents\\University\\York\\Classes\\Year 2017-2018\\EECS 3311\\Assignments\\lab2\\EECS3311_lab_2\\peg_solitaire\\EIFGENs\\peg_solitaire\\W_code";
+	egc_system_location = "C:\\Users\\Saad\\Desktop\\EECS3311_lab_2\\peg_solitaire\\EIFGENs\\peg_solitaire\\W_code";
 	egc_compiler_tag = 38;
 	egc_project_version = 1507165683;
 	egc_has_old_special_semantic = 0;
@@ -128,7 +128,7 @@ void egc_init_plug (void)
 	egc_rcarg = (int32 *) eif_malloc (sizeof(int32)*egc_rcount);
 	egc_rlist[0] = "APPLICATION.make";
 	egc_rcdt[0] = 0;
-	egc_rcrid[0] = 5071;
+	egc_rcrid[0] = 5072;
 	egc_rcarg[0] = 0;
 	
 	

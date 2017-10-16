@@ -31,7 +31,7 @@ feature -- Constructor
 			create imp.make_filled (unavailable_slot, 7, 7)
 		ensure
 			board_set:
-				Current = bta.templates.default_board
+				Current ~bta.templates.default_board
 		end
 
 	make_easy
@@ -41,23 +41,29 @@ feature -- Constructor
 			set_status (1, 4, unoccupied_slot)
 			set_status (4, 4, unoccupied_slot)
 			set_status (6, 4, unoccupied_slot)
-
 			set_statuses (2, 3, 4, 4, occupied_slot)
 			set_status (5, 4, occupied_slot)
 		ensure
-			board_set:
-				Current ~ bta.templates.easy_board
+			board_set: Current ~ bta.templates.easy_board
 		end
 
 	make_cross
 			-- Initialize a Cross board.
 		do
 			make_easy
-			set_statuses (2,5,4,4,occupied_slot)
-            set_statuses (3,3,3,5,occupied_slot)
-			set_statuses (3,5,6,7,unoccupied_slot)
-			set_statuses (1,7,3,5,unoccupied_slot)
-			set_statuses (3,5,1,2,unoccupied_slot)
+			set_statuses (1, 2, 3, 3, unoccupied_slot)
+			set_statuses (1, 2, 5, 5, unoccupied_slot)
+			set_statuses (3, 5, 1, 1, unoccupied_slot)
+			set_statuses (3, 5, 2, 2, unoccupied_slot)
+			set_statuses (3, 5, 6, 6, unoccupied_slot)
+			set_statuses (3, 5, 7, 7, unoccupied_slot)
+			set_statuses (4, 5, 3, 3, unoccupied_slot)
+			set_statuses (4, 5, 5, 5, unoccupied_slot)
+			set_statuses (6, 6, 3, 5, unoccupied_slot)
+			set_statuses (7, 7, 3, 5, unoccupied_slot)
+			set_status (3, 3, occupied_slot)
+			set_status (3, 5, occupied_slot)
+			set_status (4, 4, occupied_slot)
 
 		ensure
 			board_set:
@@ -68,10 +74,20 @@ feature -- Constructor
 			-- Initialize a Plus board.
 		do
 			make_easy
-			set_statuses (3,5,1,7,unoccupied_slot)
-			set_statuses (2,6,4,4,occupied_slot)
-			set_statuses (1,7,3,5,unoccupied_slot)
-			set_statuses (4,4,2,6,occupied_slot)
+			make_easy
+			set_statuses (1, 2, 3, 3, unoccupied_slot)
+			set_statuses (1, 2, 5, 5, unoccupied_slot)
+			set_statuses (3, 3, 1, 3, unoccupied_slot)
+			set_statuses (3, 3, 5, 7, unoccupied_slot)
+			set_status (4, 1, unoccupied_slot)
+			set_status (4, 7, unoccupied_slot)
+			set_statuses (5, 5, 1, 3, unoccupied_slot)
+			set_statuses (5, 5, 5, 7, unoccupied_slot)
+			set_status (6, 3, unoccupied_slot)
+			set_status (6, 5, unoccupied_slot)
+			set_statuses (7, 7, 3, 5, unoccupied_slot)
+			set_status (6, 4, occupied_slot)
+			set_statuses (4, 4, 2, 6, occupied_slot)
 		ensure
 			board_set:
 				current~bta.templates.plus_board
@@ -81,16 +97,17 @@ feature -- Constructor
 			-- Initialize a Pyramid board.
 		do
 			make_easy
-			set_statuses (3,5,1,7,occupied_slot)
-			set_statuses (6,7,3,5,unoccupied_slot)
-			set_statuses (1,1,3,5,unoccupied_slot)
-			set_status (2,3, unoccupied_slot)
-			set_status (2,4, occupied_slot)
-			set_status (3,6, unoccupied_slot)
-			set_status (3,2, unoccupied_slot)
-			set_statuses (3,4,1,1,unoccupied_slot)
-			set_statuses (3,4,7,7,unoccupied_slot)
-			set_status (2,5,unoccupied_slot)
+			set_statuses (1, 2, 3, 3, unoccupied_slot)
+			set_statuses (1, 2, 5, 5, unoccupied_slot)
+			set_statuses (3, 3, 1, 2, unoccupied_slot)
+			set_statuses (3, 3, 6, 7, unoccupied_slot)
+			set_status (4, 1, unoccupied_slot)
+			set_status (4, 7, unoccupied_slot)
+			set_statuses (6, 6, 3, 5, unoccupied_slot)
+			set_statuses (7, 7, 3, 5, unoccupied_slot)
+			set_statuses (5, 5, 1, 7, occupied_slot)
+			set_statuses (4, 4, 2, 6, occupied_slot)
+			set_statuses (3, 3, 3, 5, occupied_slot)
 		ensure
 			board_set:
 				current~bta.templates.pyramid_board
@@ -177,17 +194,15 @@ feature -- Auxiliary Commands
 			valid_row_range:
 				r1<=r2
 			valid_column_range:
-				c1<c2
+				c1<=c2
 		do
 			across
-				1 |..| imp.height as n
+				r1 |..| r2 as n
 			loop
 				across
-					1 |..| imp.width as m
+					c1 |..| c2 as m
 				loop
-					if (n.item>=r1 and n.item<r2) and (m.item>=c1 and m.item<c2) then
-						imp.put(status, n.item, m.item)
-					end
+					imp.put(status, n.item, m.item)
 				end
 			end
 		ensure
@@ -226,15 +241,19 @@ feature -- Auxiliary Queries
 			valid_column_range:
 				c1<=c2
 		do
-			Result:=
+			Result:= true
 			across
-				1 |..| number_of_rows as i
-			all
+				1 |..| number_of_rows as m
+			loop
 				across
-					1 |..| number_of_columns as j
-				all
-					Current.status_of (i.item,j.item) = other.status_of (i.item,j.item) or	(i.item <= r2 and i.item >= r1 and j.item >= c1 and j.item <= c2)
+					1 |..| number_of_columns as n
+				loop
+					if	(n.item < c1 or n.item > c2) or
+						(m.item < r1 or m.item > r2)
+					then
+						Result:= Result and Current.status_of (n.item, m.item).is_equal (other.status_of (n.item, m.item))
 				end
+			end
 			end
 		ensure
 			correct_result:
@@ -345,38 +364,59 @@ feature -- Equality
 	is_equal (other: like Current): BOOLEAN
 			-- Is current board equal to 'other'?
 		do
-			Result:=Current.out~other.out
+			Result:=(Current.out~other.out)
 		ensure then
 			correct_result:
-				Result = current.out~other.out
+				Result = (current.out~other.out)
 		end
 
 feature -- Output
 	out: STRING
 			-- String representation of current board.
 		local
-			s : STRING
+			i: INTEGER
+			j: INTEGER
 		do
-			create s.make_empty
-			across
-				1 |..| number_of_rows as i
+			create Result.make_empty
+			-- Your task: the current implementation
+			-- may not be correct.
+			-- No postcondition is needed for this query.
+
+			--Result := Current.out
+			from
+				i := 1
+			until
+				i > current.number_of_rows
 			loop
-				across
-					1 |..| number_of_columns as j
+				from
+					j := 1
+				until
+					j > current.number_of_columns
 				loop
-					if imp.item (i.item, j.item) ~ occupied_slot then
-						s.append ("O")
-					elseif imp.item (i.item, j.item) ~ unavailable_slot then
-						s.append ("*")
-					else
-						s.append (".")
+					if imp.item (i, j) ~ ssa.occupied_slot
+					then
+						Result.append ("O")
 					end
-						s.append ("%N")
+
+					if imp.item (i, j) ~ ssa.unoccupied_slot
+					then
+						Result.append (".")
 					end
+
+					if imp.item (i, j) ~ ssa.unavailable_slot
+					then
+						Result.append ("*")
+					end
+
+					j := j + 1
 				end
-				s.remove_tail(1)
-				result := s
+				Result.append ("%N")
+				i := i + 1
 			end
+			Result.remove_tail (1)
+
+		end
+
 
 feature {NONE} -- Implementation
 

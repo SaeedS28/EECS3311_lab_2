@@ -99,20 +99,13 @@ feature -- Constructors
 feature -- Commands
 	move_left (r, c: INTEGER)
 		require
-			from_slot_valid_row:
-				board.is_valid_row (r)
-			from_slot_valid_column:
-				board.is_valid_column (r)
-			middle_slot_valid_column:
-				board.is_valid_column (c-1)
-			to_slot_valid_column:
-				board.is_valid_column (c-2)
-			from_slot_occupied:
-				board.status_of (r, c)=board.occupied_slot
-			middle_slot_occupied:
-				board.status_of (r, c-1)=board.occupied_slot
-			to_slot_unoccupied:
-				board.status_of (r, c-2)=board.unoccupied_slot
+		from_slot_valid_row: board.is_valid_row (r)
+			from_slot_valid_column: c >= 3 and c <= 7
+			middle_slot_valid_column: c - 1 >= 2 and c - 1 <= 6
+			to_slot_valid_column: c - 2 >= 1 and c - 2 <= 5
+			from_slot_occupied: board.status_of (r, c) ~ board.occupied_slot
+			middle_slot_occupied: board.status_of (r, c - 1) ~ board.occupied_slot
+			to_slot_unoccupied: board.status_of (r, c - 2) ~ board.unoccupied_slot
 		do
 			board.set_status (r, c, board.unoccupied_slot)
 			board.set_status (r, c-1, board.unoccupied_slot)
@@ -128,20 +121,13 @@ feature -- Commands
 
 	move_right (r, c: INTEGER)
 		require
-			from_slot_valid_row:
-				board.is_valid_row (r)
-			from_slot_valid_column:
-				board.is_valid_column (c)
-			middle_slot_valid_column:
-				board.is_valid_column (c+1)
-			to_slot_valid_column:
-				board.is_valid_column (c+2)
-			from_slot_occupied:
-				board.status_of (r, c)=board.occupied_slot
-			middle_slot_occupied:
-				board.status_of (r, c+1)=board.occupied_slot
-			to_slot_unoccupied:
-				board.status_of (r, c)=board.unoccupied_slot
+			from_slot_valid_row: board.is_valid_row (r)
+			from_slot_valid_column: (c >= 1) and (c <= 5)
+			middle_slot_valid_column: (c + 1) >= 2 and (c + 1 <= 6)
+			to_slot_valid_column: (c + 2) >= 3 and (c + 2) <= 7
+			from_slot_occupied: board.status_of (r, c) ~ board.occupied_slot
+			middle_slot_occupied: board.status_of (r, c + 1) ~ board.occupied_slot
+			to_slot_unoccupied: board.status_of (r, c + 2) ~ board.unoccupied_slot
 		do
 			board.set_status (r, c+2, board.occupied_slot)
 			board.set_statuses (r, r, c, c+1, board.unoccupied_slot)
@@ -156,20 +142,13 @@ feature -- Commands
 
 	move_up (r, c: INTEGER)
 		require
-			from_slot_valid_column:
-				board.is_valid_column (c)
-			from_slot_valid_row:
-				board.is_valid_row (r)
-			middle_slot_valid_row:
-				board.is_valid_row (r-1)
-			to_slot_valid_row:
-				board.is_valid_row (r-2)
-			from_slot_occupied:
-				board.status_of (r, c)=board.occupied_slot
-			middle_slot_occupied:
-				board.status_of (r-1, c)=board.occupied_slot
-			to_slot_unoccupied:
-				board.status_of (r-2, c)=board.unoccupied_slot
+			from_slot_valid_column: board.is_valid_column (c)
+			from_slot_valid_row: r >= 3 and r <= 7
+			middle_slot_valid_row: r - 1 >= 2 and r-1 <= 6
+			to_slot_valid_row: r - 2 >= 1 and r-2 <= 5
+			from_slot_occupied: board.status_of (r, c) ~ board.occupied_slot
+			middle_slot_occupied: board.status_of (r - 1, c) ~ board.occupied_slot
+			to_slot_unoccupied: board.status_of (r - 2, c) ~ board.unoccupied_slot
 		do
 			board.set_status (r - 2,c,board.occupied_slot)
 			board.set_statuses (r - 1, r, c, c, board.unoccupied_slot)
@@ -193,11 +172,11 @@ feature -- Commands
 			to_slot_valid_row:
 				board.is_valid_row (r+2)
 			from_slot_occupied:
-				board.status_of (r, c)=board.occupied_slot
+				board.status_of (r, c)~board.occupied_slot
 			middle_slot_occupied:
-				board.status_of (r+1, c)=board.occupied_slot
+				board.status_of (r+1, c)~board.occupied_slot
 			to_slot_unoccupied:
-				board.status_of (r+2, c)=board.unoccupied_slot
+				board.status_of (r+2, c)~board.unoccupied_slot
 		do
 			board.set_status (r+2,c,board.occupied_slot)
 			board.set_statuses (r, r+1, c, c, board.unoccupied_slot)
@@ -224,10 +203,15 @@ feature {NONE} -- Moves Query
 			bounded_up:BOOLEAN
 			bounded_down:BOOLEAN
 		do
-			bounded_right:=board.is_valid_column (c+2)
-			bounded_left:=board.is_valid_column (c-2)
-			bounded_up:=board.is_valid_row (r-2)
-			bounded_down:=board.is_valid_row (r+2)
+--			bounded_right:=board.is_valid_column (c+2)
+--			bounded_left:=board.is_valid_column (c-2)
+--			bounded_up:=board.is_valid_row (r-2)
+--			bounded_down:=board.is_valid_row (r+2)
+
+			bounded_right:=(c+2)<=7
+			bounded_left:=(c-2)>=1
+			bounded_up:=(r-2)>=1
+			bounded_down:=(r+2)<=7
 
 			if bounded_right = true then
 				right_move:=board.status_of  (r,c) = board.occupied_slot

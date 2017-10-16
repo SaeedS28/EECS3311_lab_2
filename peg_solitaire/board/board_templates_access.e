@@ -10,11 +10,12 @@ expanded class
 feature -- Access to board templates
 	templates: BOARD_TEMPLATES
 		once
-			-- original implementation was incorrect because it did not
-			-- use the singleton design pattern
+			-- Your task: the current implementation
+			-- may not be correct.
 			create Result.make
 		end
 
 invariant
-	singleton_templates: templates = templates
+	singleton_templates:
+		templates=templates
 end

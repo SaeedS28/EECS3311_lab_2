@@ -16,7 +16,7 @@ feature -- Constructor for descendant classes
 			create game.make_from_board (templates.default_board)
 		ensure
 			default_board_set:
-				Current.game.board ~ templates.default_board_out
+				Current.game.board ~ templates.default_board
 		end
 
 feature -- Attributes

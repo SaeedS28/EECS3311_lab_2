@@ -10,7 +10,7 @@
 extern "C" {
 #endif
 
-extern EIF_TYPED_VALUE F987_7386(EIF_REFERENCE, EIF_TYPED_VALUE);
+extern EIF_TYPED_VALUE F987_7387(EIF_REFERENCE, EIF_TYPED_VALUE);
 extern void EIF_Minit987(void);
 
 #ifdef __cplusplus
@@ -33,7 +33,7 @@ extern "C" {
 #endif
 
 /* {SLOT_STATUS}.is_equal */
-EIF_TYPED_VALUE F987_7386 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
+EIF_TYPED_VALUE F987_7387 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 {
 	GTCX
 	char *l_feature_name = "is_equal";
@@ -66,12 +66,12 @@ EIF_TYPED_VALUE F987_7386 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	RTLU(SK_REF,&arg1);
 	RTLU (SK_REF, &Current);
 	
-	RTEAA(l_feature_name, 986, Current, 0, 1, 13634);
+	RTEAA(l_feature_name, 986, Current, 0, 1, 13635);
 	RTSA(dtype);
 	RTSC;
 	RTME(dtype, 0);
 	RTGC;
-	RTDBGEAA(986, Current, 13634);
+	RTDBGEAA(986, Current, 13635);
 	RTCC(arg1, 986, l_feature_name, 1, eif_new_type(986, 0x01),0);
 	RTIV(Current, RTAL);
 	if ((RTAL & CK_REQUIRE) || RTAC) {
@@ -88,7 +88,7 @@ body:;
 	RTDBGAL(Current, 0, 0x04000000, 1,0); /* Result */
 	tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(28, "out", Current))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 	tr2 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(28, "out", arg1))(arg1)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
-	Result = (EIF_BOOLEAN) RTCEQ(tr1, tr2);
+	Result = (EIF_BOOLEAN) RTEQ(tr1, tr2);
 	if (RTAL & CK_ENSURE) {
 		RTHOOK(3);
 		RTCT("symmetric", EX_POST);
@@ -114,7 +114,7 @@ body:;
 		RTCT("correct_result", EX_POST);
 		tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(28, "out", Current))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 		tr2 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(28, "out", arg1))(arg1)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
-		if (RTCEQ(tr1, tr2)) {
+		if ((EIF_BOOLEAN)(Result == RTEQ(tr1, tr2))) {
 			RTCK;
 		} else {
 			RTCF;

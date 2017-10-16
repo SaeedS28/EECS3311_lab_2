@@ -13,7 +13,7 @@ extern "C" {
 extern EIF_TYPED_VALUE F959_7105(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F959_7106(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F959_7107(EIF_REFERENCE);
-extern void F959_7793(EIF_REFERENCE, int);
+extern void F959_7794(EIF_REFERENCE, int);
 extern void EIF_Minit959(void);
 
 #ifdef __cplusplus
@@ -36,23 +36,24 @@ extern "C" {
 #endif
 
 /* {SLOT_STATUS_ACCESS}.unavailable_slot */
+RTOID (F959_7105)
 EIF_TYPED_VALUE F959_7105 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "unavailable_slot";
 	RTEX;
 	EIF_REFERENCE tr1 = NULL;
-	EIF_REFERENCE Result = ((EIF_REFERENCE) 0);
-	
 	RTSN;
 	RTDA;
 	RTLD;
 	
-	RTLI(3);
+#define Result RTOTRR
+	RTOTDR(F959_7105);
+
+	RTLI(2);
 	RTLR(0,tr1);
-	RTLR(1,Result);
-	RTLR(2,Current);
-	RTLIU(3);
+	RTLR(1,Current);
+	RTLIU(2);
 	RTLU (SK_REF, &Result);
 	RTLU (SK_REF, &Current);
 	
@@ -63,14 +64,16 @@ EIF_TYPED_VALUE F959_7105 (EIF_REFERENCE Current)
 	RTGC;
 	RTDBGEAA(958, Current, 13378);
 	RTIV(Current, RTAL);
+	RTOTP;
 	RTHOOK(1);
 	RTDBGAL(Current, 0, 0xF80003DB, 0,0); /* Result */
 	tr1 = RTLN(eif_new_type(987, 0x01).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5192, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5193, Dtype(tr1)))(tr1);
 	RTNHOOK(1,1);
 	Result = (EIF_REFERENCE) RTCCL(tr1);
 	RTVI(Current, RTAL);
 	RTRS;
+	RTOTE;
 	RTHOOK(2);
 	RTDBGLE;
 	RTMD(0);
@@ -78,26 +81,28 @@ EIF_TYPED_VALUE F959_7105 (EIF_REFERENCE Current)
 	RTLO(2);
 	RTEE;
 	{ EIF_TYPED_VALUE r; r.type = SK_REF; r.it_r = Result; return r; }
+#undef Result
 }
 
 /* {SLOT_STATUS_ACCESS}.occupied_slot */
+RTOID (F959_7106)
 EIF_TYPED_VALUE F959_7106 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "occupied_slot";
 	RTEX;
 	EIF_REFERENCE tr1 = NULL;
-	EIF_REFERENCE Result = ((EIF_REFERENCE) 0);
-	
 	RTSN;
 	RTDA;
 	RTLD;
 	
-	RTLI(3);
+#define Result RTOTRR
+	RTOTDR(F959_7106);
+
+	RTLI(2);
 	RTLR(0,tr1);
-	RTLR(1,Result);
-	RTLR(2,Current);
-	RTLIU(3);
+	RTLR(1,Current);
+	RTLIU(2);
 	RTLU (SK_REF, &Result);
 	RTLU (SK_REF, &Current);
 	
@@ -108,14 +113,16 @@ EIF_TYPED_VALUE F959_7106 (EIF_REFERENCE Current)
 	RTGC;
 	RTDBGEAA(958, Current, 13379);
 	RTIV(Current, RTAL);
+	RTOTP;
 	RTHOOK(1);
 	RTDBGAL(Current, 0, 0xF80003DE, 0,0); /* Result */
 	tr1 = RTLN(eif_new_type(990, 0x01).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5194, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5195, Dtype(tr1)))(tr1);
 	RTNHOOK(1,1);
 	Result = (EIF_REFERENCE) RTCCL(tr1);
 	RTVI(Current, RTAL);
 	RTRS;
+	RTOTE;
 	RTHOOK(2);
 	RTDBGLE;
 	RTMD(0);
@@ -123,26 +130,28 @@ EIF_TYPED_VALUE F959_7106 (EIF_REFERENCE Current)
 	RTLO(2);
 	RTEE;
 	{ EIF_TYPED_VALUE r; r.type = SK_REF; r.it_r = Result; return r; }
+#undef Result
 }
 
 /* {SLOT_STATUS_ACCESS}.unoccupied_slot */
+RTOID (F959_7107)
 EIF_TYPED_VALUE F959_7107 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "unoccupied_slot";
 	RTEX;
 	EIF_REFERENCE tr1 = NULL;
-	EIF_REFERENCE Result = ((EIF_REFERENCE) 0);
-	
 	RTSN;
 	RTDA;
 	RTLD;
 	
-	RTLI(3);
+#define Result RTOTRR
+	RTOTDR(F959_7107);
+
+	RTLI(2);
 	RTLR(0,tr1);
-	RTLR(1,Result);
-	RTLR(2,Current);
-	RTLIU(3);
+	RTLR(1,Current);
+	RTLIU(2);
 	RTLU (SK_REF, &Result);
 	RTLU (SK_REF, &Current);
 	
@@ -153,14 +162,16 @@ EIF_TYPED_VALUE F959_7107 (EIF_REFERENCE Current)
 	RTGC;
 	RTDBGEAA(958, Current, 13380);
 	RTIV(Current, RTAL);
+	RTOTP;
 	RTHOOK(1);
 	RTDBGAL(Current, 0, 0xF80003DD, 0,0); /* Result */
 	tr1 = RTLN(eif_new_type(989, 0x01).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5193, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5194, Dtype(tr1)))(tr1);
 	RTNHOOK(1,1);
 	Result = (EIF_REFERENCE) RTCCL(tr1);
 	RTVI(Current, RTAL);
 	RTRS;
+	RTOTE;
 	RTHOOK(2);
 	RTDBGLE;
 	RTMD(0);
@@ -168,10 +179,11 @@ EIF_TYPED_VALUE F959_7107 (EIF_REFERENCE Current)
 	RTLO(2);
 	RTEE;
 	{ EIF_TYPED_VALUE r; r.type = SK_REF; r.it_r = Result; return r; }
+#undef Result
 }
 
 /* {SLOT_STATUS_ACCESS}._invariant */
-void F959_7793 (EIF_REFERENCE Current, int where)
+void F959_7794 (EIF_REFERENCE Current, int where)
 {
 	GTCX
 	char *l_feature_name = "_invariant";
@@ -195,7 +207,7 @@ void F959_7793 (EIF_REFERENCE Current, int where)
 	RTLIU(3);
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
-	RTEAINV(l_feature_name, 958, Current, 0, 7792);
+	RTEAINV(l_feature_name, 958, Current, 0, 7793);
 	RTSA(dtype);
 	RTME(dtype, 0);
 	RTIT("singleton_slot_statuses", Current);
@@ -229,6 +241,9 @@ void F959_7793 (EIF_REFERENCE Current, int where)
 void EIF_Minit959 (void)
 {
 	GTCX
+	RTOTS (7105,F959_7105)
+	RTOTS (7106,F959_7106)
+	RTOTS (7107,F959_7107)
 }
 
 

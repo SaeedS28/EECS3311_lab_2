@@ -83,21 +83,21 @@ void A166_160 (EIF_REFERENCE Current, EIF_POINTER arg1, EIF_POINTER arg2)
 EIF_TYPED_VALUE _A975_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5097, "test_good_player_wins_easy_board", closed [1].it_r))(closed [1].it_r);
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5098, "test_good_player_wins_easy_board", closed [1].it_r))(closed [1].it_r);
 }
 
 	/* TEST_PEG_SOLITAIRE test_easy_game_creation */
 EIF_TYPED_VALUE _A976_78 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5100, "test_easy_game_creation", closed [1].it_r))(closed [1].it_r);
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5101, "test_easy_game_creation", closed [1].it_r))(closed [1].it_r);
 }
 
 	/* TEST_BAD_PLAYER test_bad_player_loses_easy_board */
 EIF_TYPED_VALUE _A977_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5102, "test_bad_player_loses_easy_board", closed [1].it_r))(closed [1].it_r);
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5103, "test_bad_player_loses_easy_board", closed [1].it_r))(closed [1].it_r);
 }
 
 

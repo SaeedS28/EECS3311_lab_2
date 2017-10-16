@@ -5666,13 +5666,13 @@ char *names977 [] =
 "number_passed_tests",
 };
 
-char *names982 [] =
+char *names981 [] =
 {
 "compact_time",
 "fractional_second",
 };
 
-char *names985 [] =
+char *names984 [] =
 {
 "time",
 "date",
@@ -5739,17 +5739,17 @@ char *names999 [] =
 
 char *names1000 [] =
 {
-"minute",
-"hour",
-"fine_second",
-};
-
-char *names1001 [] =
-{
 "origin_date",
 "year",
 "month",
 "day",
+};
+
+char *names1001 [] =
+{
+"minute",
+"hour",
+"fine_second",
 };
 
 char *names1003 [] =
@@ -5783,24 +5783,24 @@ char *names1006 [] =
 
 char *names1007 [] =
 {
-"compact_time",
-"fractional_second",
+"ordered_compact_date",
 };
 
 char *names1008 [] =
 {
-"compact_time",
-"fractional_second",
+"ordered_compact_date",
 };
 
 char *names1009 [] =
 {
-"ordered_compact_date",
+"compact_time",
+"fractional_second",
 };
 
 char *names1010 [] =
 {
-"ordered_compact_date",
+"compact_time",
+"fractional_second",
 };
 
 char *names1011 [] =
@@ -5841,14 +5841,14 @@ char *names1013 [] =
 
 char *names1014 [] =
 {
-"start_bound",
-"end_bound",
+"internal_name_32",
+"internal_name",
 };
 
 char *names1015 [] =
 {
-"internal_name_32",
-"internal_name",
+"start_bound",
+"end_bound",
 };
 
 char *names1016 [] =

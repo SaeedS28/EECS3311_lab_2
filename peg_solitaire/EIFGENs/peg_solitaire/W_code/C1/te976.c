@@ -10,9 +10,9 @@
 extern "C" {
 #endif
 
-extern void F976_7283(EIF_REFERENCE);
-extern EIF_TYPED_VALUE F976_7284(EIF_REFERENCE);
+extern void F976_7284(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F976_7285(EIF_REFERENCE);
+extern EIF_TYPED_VALUE F976_7286(EIF_REFERENCE);
 extern void EIF_Minit976(void);
 extern EIF_REFERENCE _A976_78();
 
@@ -36,7 +36,7 @@ extern "C" {
 #endif
 
 /* {TEST_PEG_SOLITAIRE}.make */
-void F976_7283 (EIF_REFERENCE Current)
+void F976_7284 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "make";
@@ -59,12 +59,12 @@ void F976_7283 (EIF_REFERENCE Current)
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
 	
-	RTEAA(l_feature_name, 975, Current, 0, 0, 13549);
+	RTEAA(l_feature_name, 975, Current, 0, 0, 13551);
 	RTSA(Dtype(Current));
 	RTSC;
 	RTME(Dtype(Current), 0);
 	RTGC;
-	RTDBGEAA(975, Current, 13549);
+	RTDBGEAA(975, Current, 13551);
 	RTIV(Current, RTAL);
 	RTHOOK(1);
 	{
@@ -84,10 +84,10 @@ void F976_7283 (EIF_REFERENCE Current)
 		static EIF_TYPE typcache0 = {INVALID_DTYPE, 0};
 		
 		typres0 = (typcache0.id != INVALID_DTYPE ? typcache0 : (typcache0 = eif_compound_id(dftype, typarr0)));
-		tr2 = RTLNRW(typres0.id, 0, (EIF_POINTER) _A976_78, (EIF_POINTER)(0),5100, 0, 0, 1, -1, tr1, 0);
+		tr2 = RTLNRW(typres0.id, 0, (EIF_POINTER) _A976_78, (EIF_POINTER)(0),5101, 0, 0, 1, -1, tr1, 0);
 	}
 	ur1 = RTCCL(tr2);
-	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWF(5072, Dtype(Current)))(Current, ur1x);
+	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWF(5073, Dtype(Current)))(Current, ur1x);
 	RTVI(Current, RTAL);
 	RTRS;
 	RTHOOK(2);
@@ -100,17 +100,17 @@ void F976_7283 (EIF_REFERENCE Current)
 }
 
 /* {TEST_PEG_SOLITAIRE}.bta */
-EIF_TYPED_VALUE F976_7284 (EIF_REFERENCE Current)
+EIF_TYPED_VALUE F976_7285 (EIF_REFERENCE Current)
 {
 	EIF_TYPED_VALUE r;
 	r.type = SK_REF;
-	r.it_r = (Current + RTWA(5099,Dtype(Current)));
+	r.it_r = (Current + RTWA(5100,Dtype(Current)));
 	return r;
 }
 
 
 /* {TEST_PEG_SOLITAIRE}.test_easy_game_creation */
-EIF_TYPED_VALUE F976_7285 (EIF_REFERENCE Current)
+EIF_TYPED_VALUE F976_7286 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "test_easy_game_creation";
@@ -147,17 +147,17 @@ EIF_TYPED_VALUE F976_7285 (EIF_REFERENCE Current)
 	RTLU (SK_REF, &Current);
 	RTLU(SK_REF, &loc1);
 	
-	RTEAA(l_feature_name, 975, Current, 1, 0, 13548);
+	RTEAA(l_feature_name, 975, Current, 1, 0, 13550);
 	RTSA(dtype);
 	RTSC;
 	RTME(dtype, 0);
 	RTGC;
-	RTDBGEAA(975, Current, 13548);
+	RTDBGEAA(975, Current, 13550);
 	RTIV(Current, RTAL);
 	RTHOOK(1);
 	tr1 = RTMS_EX_H("test: game creation with easy board",35,708461156);
 	ur1 = tr1;
-	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWF(5077, dtype))(Current, ur1x);
+	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWF(5078, dtype))(Current, ur1x);
 	RTHOOK(2);
 	RTDBGAL(Current, 1, 0xF80003C2, 0, 0); /* loc1 */
 	tr1 = RTLN(eif_new_type(962, 0x01).id);
@@ -168,18 +168,18 @@ EIF_TYPED_VALUE F976_7285 (EIF_REFERENCE Current)
 	RTDBGAL(Current, 0, 0x04000000, 1,0); /* Result */
 	tb1 = '\0';
 	tb2 = '\0';
-	tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4998, "board", loc1))(loc1)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
-	tr2 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5099, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
+	tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4999, "board", loc1))(loc1)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
+	tr2 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5100, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 	RTNHOOK(3,1);
-	tr3 = ((up2x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4999, "templates", tr2))(tr2)), (((up2x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up2x.it_r = RTBU(up2x))), (up2x.type = SK_POINTER), up2x.it_r);
+	tr3 = ((up2x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5000, "templates", tr2))(tr2)), (((up2x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up2x.it_r = RTBU(up2x))), (up2x.type = SK_POINTER), up2x.it_r);
 	RTNHOOK(3,2);
 	tr2 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4967, "easy_board", tr3))(tr3)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 	if (RTEQ(tr1, tr2)) {
-		tb3 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4994, "is_over", loc1))(loc1)).it_b);
+		tb3 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4995, "is_over", loc1))(loc1)).it_b);
 		tb2 = (EIF_BOOLEAN) !tb3;
 	}
 	if (tb2) {
-		tb2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4995, "is_won", loc1))(loc1)).it_b);
+		tb2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4996, "is_won", loc1))(loc1)).it_b);
 		tb1 = (EIF_BOOLEAN) !tb2;
 	}
 	Result = (EIF_BOOLEAN) tb1;

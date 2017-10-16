@@ -75,7 +75,7 @@ feature -- Commands
 			**...**
 			]"
 			check assertion end
-			
+
 			game.move_up (4, 5)
 			assertion := game.out ~ "[
 			Game is over: No

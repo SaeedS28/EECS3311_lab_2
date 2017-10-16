@@ -27,7 +27,7 @@ static const EIF_TYPE_INDEX egt_14_965 [] = {0xFF01,961,0xFFFF};
 
 
 static const struct desc_info desc_965[] = {
-	{EIF_GENERIC(NULL), 13450, 0xFFFFFFFF},
+	{EIF_GENERIC(NULL), 13451, 0xFFFFFFFF},
 	{EIF_GENERIC(egt_0_965), 0, 0xFFFFFFFF},
 	{EIF_GENERIC(egt_1_965), 1, 0xFFFFFFFF},
 	{EIF_NON_GENERIC(0x0195 /*202*/), 2, 0xFFFFFFFF},
@@ -59,7 +59,7 @@ static const struct desc_info desc_965[] = {
 	{EIF_GENERIC(egt_12_965), 28, 0xFFFFFFFF},
 	{EIF_NON_GENERIC(0x01C5 /*226*/), 29, 0xFFFFFFFF},
 	{EIF_GENERIC(egt_13_965), 30, 0xFFFFFFFF},
-	{EIF_GENERIC(egt_14_965), 13449, 0xFFFFFFFF},
+	{EIF_GENERIC(egt_14_965), 13450, 0xFFFFFFFF},
 };
 void Init965(void)
 {

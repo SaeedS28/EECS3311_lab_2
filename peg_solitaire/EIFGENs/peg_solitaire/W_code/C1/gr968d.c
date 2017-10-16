@@ -30,7 +30,7 @@ static const EIF_TYPE_INDEX egt_17_968 [] = {0xFF01,967,0xFFFF};
 
 
 static const struct desc_info desc_968[] = {
-	{EIF_GENERIC(NULL), 13459, 0xFFFFFFFF},
+	{EIF_GENERIC(NULL), 13460, 0xFFFFFFFF},
 	{EIF_GENERIC(egt_0_968), 0, 0xFFFFFFFF},
 	{EIF_GENERIC(egt_1_968), 1, 0xFFFFFFFF},
 	{EIF_NON_GENERIC(0x0195 /*202*/), 2, 0xFFFFFFFF},

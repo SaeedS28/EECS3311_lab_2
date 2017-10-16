@@ -22,7 +22,7 @@ static const EIF_TYPE_INDEX egt_9_964 [] = {0xFF01,961,0xFFFF};
 
 
 static const struct desc_info desc_964[] = {
-	{EIF_GENERIC(NULL), 13448, 0xFFFFFFFF},
+	{EIF_GENERIC(NULL), 13449, 0xFFFFFFFF},
 	{EIF_GENERIC(egt_0_964), 0, 0xFFFFFFFF},
 	{EIF_GENERIC(egt_1_964), 1, 0xFFFFFFFF},
 	{EIF_NON_GENERIC(0x0195 /*202*/), 2, 0xFFFFFFFF},
@@ -54,7 +54,7 @@ static const struct desc_info desc_964[] = {
 	{EIF_NON_GENERIC(0x0787 /*963*/), 28, 0xFFFFFFFF},
 	{EIF_NON_GENERIC(0x01C5 /*226*/), 29, 0xFFFFFFFF},
 	{EIF_NON_GENERIC(0x0787 /*963*/), 30, 0xFFFFFFFF},
-	{EIF_GENERIC(egt_9_964), 13447, 0xFFFFFFFF},
+	{EIF_GENERIC(egt_9_964), 13448, 0xFFFFFFFF},
 };
 void Init964(void)
 {
