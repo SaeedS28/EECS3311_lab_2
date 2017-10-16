@@ -35,4 +35,3 @@ feature -- Tests
 			check Result end
 		end
 end
-

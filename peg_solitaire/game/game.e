@@ -100,9 +100,9 @@ feature -- Commands
 	move_left (r, c: INTEGER)
 		require
 		from_slot_valid_row: board.is_valid_row (r)
-			from_slot_valid_column: c >= 3 and c <= 7
-			middle_slot_valid_column: c - 1 >= 2 and c - 1 <= 6
-			to_slot_valid_column: c - 2 >= 1 and c - 2 <= 5
+			from_slot_valid_column: (c >= 3) and c <= 7
+			middle_slot_valid_column: (c - 1 >= 2) and (c - 1 <= 6)
+			to_slot_valid_column: (c - 2 >= 1) and (c - 2 <= 5)
 			from_slot_occupied: board.status_of (r, c) ~ board.occupied_slot
 			middle_slot_occupied: board.status_of (r, c - 1) ~ board.occupied_slot
 			to_slot_unoccupied: board.status_of (r, c - 2) ~ board.unoccupied_slot

@@ -27,13 +27,19 @@ feature -- Tests of Creation
 		local
 			g: GAME
 		do
+
 			comment ("test: game creation with easy board")
 			create g.make_easy
+--			print (g.out)
 			Result :=
 					g.board ~ bta.templates.easy_board
 				and not g.is_over
 				and not g.is_won
 			check Result end
+
+
+
+
 
 			Result := g.out ~ "[
 			Game is over: No

@@ -51,17 +51,17 @@ feature -- Constructor
 			-- Initialize a Cross board.
 		do
 			make_easy
-			set_statuses (1, 2, 3, 3, unoccupied_slot)
 			set_statuses (1, 2, 5, 5, unoccupied_slot)
-			set_statuses (3, 5, 1, 1, unoccupied_slot)
-			set_statuses (3, 5, 2, 2, unoccupied_slot)
+			set_status (3, 3, occupied_slot)
+			set_statuses (1, 2, 3, 3, unoccupied_slot)
 			set_statuses (3, 5, 6, 6, unoccupied_slot)
 			set_statuses (3, 5, 7, 7, unoccupied_slot)
-			set_statuses (4, 5, 3, 3, unoccupied_slot)
-			set_statuses (4, 5, 5, 5, unoccupied_slot)
+			set_statuses (3, 5, 1, 1, unoccupied_slot)
+			set_statuses (3, 5, 2, 2, unoccupied_slot)
 			set_statuses (6, 6, 3, 5, unoccupied_slot)
 			set_statuses (7, 7, 3, 5, unoccupied_slot)
-			set_status (3, 3, occupied_slot)
+			set_statuses (4, 5, 3, 3, unoccupied_slot)
+			set_statuses (4, 5, 5, 5, unoccupied_slot)
 			set_status (3, 5, occupied_slot)
 			set_status (4, 4, occupied_slot)
 
@@ -74,18 +74,17 @@ feature -- Constructor
 			-- Initialize a Plus board.
 		do
 			make_easy
-			make_easy
-			set_statuses (1, 2, 3, 3, unoccupied_slot)
-			set_statuses (1, 2, 5, 5, unoccupied_slot)
 			set_statuses (3, 3, 1, 3, unoccupied_slot)
 			set_statuses (3, 3, 5, 7, unoccupied_slot)
+			set_statuses (1, 2, 3, 3, unoccupied_slot)
+			set_statuses (1, 2, 5, 5, unoccupied_slot)
 			set_status (4, 1, unoccupied_slot)
+			set_status (6, 5, unoccupied_slot)
 			set_status (4, 7, unoccupied_slot)
+			set_status (6, 3, unoccupied_slot)
+			set_statuses (7, 7, 3, 5, unoccupied_slot)
 			set_statuses (5, 5, 1, 3, unoccupied_slot)
 			set_statuses (5, 5, 5, 7, unoccupied_slot)
-			set_status (6, 3, unoccupied_slot)
-			set_status (6, 5, unoccupied_slot)
-			set_statuses (7, 7, 3, 5, unoccupied_slot)
 			set_status (6, 4, occupied_slot)
 			set_statuses (4, 4, 2, 6, occupied_slot)
 		ensure
@@ -97,16 +96,16 @@ feature -- Constructor
 			-- Initialize a Pyramid board.
 		do
 			make_easy
-			set_statuses (1, 2, 3, 3, unoccupied_slot)
 			set_statuses (1, 2, 5, 5, unoccupied_slot)
 			set_statuses (3, 3, 1, 2, unoccupied_slot)
 			set_statuses (3, 3, 6, 7, unoccupied_slot)
+			set_statuses (5, 5, 1, 7, occupied_slot)
 			set_status (4, 1, unoccupied_slot)
 			set_status (4, 7, unoccupied_slot)
-			set_statuses (6, 6, 3, 5, unoccupied_slot)
-			set_statuses (7, 7, 3, 5, unoccupied_slot)
-			set_statuses (5, 5, 1, 7, occupied_slot)
 			set_statuses (4, 4, 2, 6, occupied_slot)
+			set_statuses (7, 7, 3, 5, unoccupied_slot)
+			set_statuses (6, 6, 3, 5, unoccupied_slot)
+			set_statuses (1, 2, 3, 3, unoccupied_slot)
 			set_statuses (3, 3, 3, 5, occupied_slot)
 		ensure
 			board_set:
@@ -117,15 +116,22 @@ feature -- Constructor
 			-- Initialize a Arrow board.
 		do
 			make_easy
-			set_statuses (1,5,4,4,occupied_slot)
-			set_statuses (6,7,3,5,occupied_slot)
-			set_statuses (3,5,5,7,unoccupied_slot)
-			set_statuses (3,5,1,3,unoccupied_slot)
-			set_status (1,3, unoccupied_slot)
-			set_status (1,5, unoccupied_slot)
-			set_statuses (2,2,3,5,occupied_slot)
-			set_statuses (3,3,2,6,occupied_slot)
-		ensure
+			set_status (3, 1, unoccupied_slot)
+			set_status (3, 7, unoccupied_slot)
+			set_status (1, 3, unoccupied_slot)
+			set_status (1, 5, unoccupied_slot)
+			set_statuses (4, 4, 5, 7, unoccupied_slot)
+			set_statuses (4, 4, 1, 3, unoccupied_slot)
+			set_status (1, 4, occupied_slot)
+			set_status (2, 3, occupied_slot)
+			set_statuses (5, 5, 1, 3, unoccupied_slot)
+			set_statuses (5, 5, 5, 7, unoccupied_slot)
+			set_statuses (3, 3, 2, 6, occupied_slot)
+			set_status (4, 4, occupied_slot)
+			set_status (2, 5, occupied_slot)
+			set_statuses (7, 7, 3, 5, occupied_slot)
+			set_statuses (6, 6, 3, 5, occupied_slot)
+			ensure
 			board_set:
 				current ~ bta.templates.arrow_board
 		end
@@ -134,17 +140,24 @@ feature -- Constructor
 			-- Initialize a Diamond board.
 		do
 			make_easy
-			set_status (1,3,unoccupied_slot)
-			set_status (1,5,unoccupied_slot)
-			set_status (3,1,unoccupied_slot)
-			set_status (3,7,unoccupied_slot)
-			set_status (4,4,unoccupied_slot)
-			set_status (5,1,unoccupied_slot)
-			set_status (5,7,unoccupied_slot)
-			set_status (7,3,unoccupied_slot)
-			set_status (7,5,unoccupied_slot)
-			set_statuses (1,7,3,5,occupied_slot)
-			set_statuses (3,5,1,7,occupied_slot)
+			set_status (1, 3, unoccupied_slot)
+			set_status (1, 5, unoccupied_slot)
+			set_status (3, 7, unoccupied_slot)
+			set_status (4, 4, unoccupied_slot)
+			set_status (1, 4, occupied_slot)
+			set_status (3, 1, unoccupied_slot)
+			set_status (5, 7, unoccupied_slot)
+			set_status (5, 1, unoccupied_slot)
+			set_status (7, 5, unoccupied_slot)
+			set_status (7, 3, unoccupied_slot)
+			set_status (2, 5, occupied_slot)
+			set_status (2, 3, occupied_slot)
+			set_statuses (5, 5, 2, 6, occupied_slot)
+			set_statuses (6, 6, 3, 5, occupied_slot)
+			set_statuses (4, 4, 5, 7, occupied_slot)
+			set_statuses (3, 3, 2, 6, occupied_slot)
+			set_statuses (4, 4, 1, 3, occupied_slot)
+			set_status (7, 4, occupied_slot)
 		ensure
 			board_set:
 				current~bta.templates.diamond_board
@@ -154,12 +167,19 @@ feature -- Constructor
 			-- Initialize a Skull board.
 		do
 			make_easy
-			set_statuses (3,5,1,7,occupied_slot)
-			set_statuses (3,5,1,1,unoccupied_slot)
-			set_statuses (1,7,3,5,occupied_slot)
-			set_statuses (3,5,7,7,unoccupied_slot)
-			set_status (4,3,unoccupied_slot)
-			set_status (4,5,unoccupied_slot)
+			set_status (4, 3, unoccupied_slot)
+			set_status (4, 5, unoccupied_slot)
+			set_status (4, 2, occupied_slot)
+			set_status (4, 4, occupied_slot)
+			set_status (4, 6, occupied_slot)
+			set_statuses (1, 1, 3, 5, occupied_slot)
+			set_statuses (2, 2, 3, 5, occupied_slot)
+			set_statuses (3, 5, 1, 1, unoccupied_slot)
+			set_statuses (3, 5, 7, 7, unoccupied_slot)
+			set_statuses (3, 3, 2, 6, occupied_slot)
+			set_statuses (5, 5, 2, 6, occupied_slot)
+			set_statuses (6, 6, 3, 5, occupied_slot)
+			set_statuses (7, 7, 3, 5, occupied_slot)
 		ensure
 			board_set:
 				current~bta.templates.skull_board
@@ -248,8 +268,7 @@ feature -- Auxiliary Queries
 				across
 					1 |..| number_of_columns as n
 				loop
-					if	(n.item < c1 or n.item > c2) or
-						(m.item < r1 or m.item > r2)
+					if	(n.item < c1 or n.item > c2) or (m.item < r1 or m.item > r2)
 					then
 						Result:= Result and Current.status_of (n.item, m.item).is_equal (other.status_of (n.item, m.item))
 				end
