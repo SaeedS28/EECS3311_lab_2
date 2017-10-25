@@ -80,52 +80,52 @@ void A166_160 (EIF_REFERENCE Current, EIF_POINTER arg1, EIF_POINTER arg2)
 }
 
 	/* TEST_GOOD_PLAYER test_good_player_wins_easy_board */
-EIF_TYPED_VALUE _A975_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+EIF_TYPED_VALUE _A976_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5098, "test_good_player_wins_easy_board", closed [1].it_r))(closed [1].it_r);
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5099, "test_good_player_wins_easy_board", closed [1].it_r))(closed [1].it_r);
 }
 
-	/* TEST_PEG_SOLITAIRE test_easy_game_creation */
+	/* TEST_GOOD_PLAYER test_board_out */
 EIF_TYPED_VALUE _A976_78 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5101, "test_easy_game_creation", closed [1].it_r))(closed [1].it_r);
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5100, "test_board_out", closed [1].it_r))(closed [1].it_r);
 }
 
-	/* BAD_PLAYER_TESTS test_loss_pyramid_board */
+	/* TEST_GOOD_PLAYER test_bad_matches_slots_except_postcondition */
+void _A976_79 (void(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTVF(5101, "test_bad_matches_slots_except_postcondition", closed [1].it_r))(closed [1].it_r);
+}
+
+	/* TEST_GOOD_PLAYER test_correct_matches_slot_except_precondition */
+void _A976_80 (void(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTVF(5102, "test_correct_matches_slot_except_precondition", closed [1].it_r))(closed [1].it_r);
+}
+
+	/* TEST_GOOD_PLAYER test_correct_matches_slots_except */
+EIF_TYPED_VALUE _A976_81 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5103, "test_correct_matches_slots_except", closed [1].it_r))(closed [1].it_r);
+}
+
+	/* TEST_PEG_SOLITAIRE test_easy_game_creation */
 EIF_TYPED_VALUE _A977_78 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5104, "test_loss_pyramid_board", closed [1].it_r))(closed [1].it_r);
-}
-
-	/* GOOD_PLAYER_TESTS test_game_won_plus_board */
-EIF_TYPED_VALUE _A978_78 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
-{
-	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5107, "test_game_won_plus_board", closed [1].it_r))(closed [1].it_r);
-}
-
-	/* GOOD_PLAYER_TESTS test_board_out */
-EIF_TYPED_VALUE _A978_79 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
-{
-	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5108, "test_board_out", closed [1].it_r))(closed [1].it_r);
-}
-
-	/* GOOD_PLAYER_TESTS test_move_left_precondition */
-void _A978_80 (void(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
-{
-	GTCX
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTVF(5109, "test_move_left_precondition", closed [1].it_r))(closed [1].it_r);
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5106, "test_easy_game_creation", closed [1].it_r))(closed [1].it_r);
 }
 
 	/* TEST_BAD_PLAYER test_bad_player_loses_easy_board */
-EIF_TYPED_VALUE _A979_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+EIF_TYPED_VALUE _A978_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5111, "test_bad_player_loses_easy_board", closed [1].it_r))(closed [1].it_r);
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5108, "test_bad_player_loses_easy_board", closed [1].it_r))(closed [1].it_r);
 }
 
 

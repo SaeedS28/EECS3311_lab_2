@@ -55,15 +55,14 @@ $spitshell >>Makefile <<'!NO!SUBS!'
 
 OBJECTS = big_file_C2_c.o 
 
-OLDOBJECTS =  ty1017.o ty1017d.o ty1018.o ty1018d.o ar1019.o ar1019d.o ba996.o \
-	ba996d.o go995.o go995d.o pl994.o pl994d.o es999.o es999d.o es997.o \
-	es997d.o es998.o es998d.o un990.o un990d.o oc993.o oc993d.o un992.o \
-	un992d.o da1012.o da1012d.o ti1010.o ti1010d.o av991.o av991d.o \
-	da1015.o da1015d.o da1003.o da1003d.o da1008.o da1008d.o ab1004.o \
-	ab1004d.o da1006.o da1006d.o da1011.o da1011d.o ti1002.o ti1002d.o \
-	ti1009.o ti1009d.o da1001.o da1001d.o da1013.o da1013d.o du1000.o \
-	du1000d.o da1005.o da1005d.o da1014.o da1014d.o fi1007.o fi1007d.o \
-	in1016.o in1016d.o 
+OLDOBJECTS =  ty1015.o ty1015d.o ty1017.o ty1017d.o ar1018.o ar1018d.o ba995.o \
+	ba995d.o go994.o go994d.o pl993.o pl993d.o es996.o es996d.o es998.o \
+	es998d.o es997.o es997d.o un992.o un992d.o oc991.o oc991d.o av990.o \
+	av990d.o ti1011.o ti1011d.o da1009.o da1009d.o da1007.o da1007d.o \
+	ti1002.o ti1002d.o ab1003.o ab1003d.o ti1010.o ti1010d.o da1014.o \
+	da1014d.o da1001.o da1001d.o da1005.o da1005d.o da1008.o da1008d.o \
+	da1004.o da1004d.o da1013.o da1013d.o fi1006.o fi1006d.o du999.o \
+	du999d.o in1016.o in1016d.o da1000.o da1000d.o da1012.o da1012d.o 
 
 all: Cobj2.o
 

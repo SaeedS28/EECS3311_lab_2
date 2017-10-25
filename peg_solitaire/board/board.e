@@ -250,11 +250,7 @@ feature -- Auxiliary Commands
 
 feature -- Auxiliary Queries
 	matches_slots_except (
-		other: BOARD; r1, r2, c1, c2: INTEGER)
-	: BOOLEAN
-			-- Do slots outside the intersection of
-			-- rows 'r1' to 'r2' and columns 'c1' and 'c2'
-			-- match in Current and 'other'.
+		other: BOARD; r1, r2, c1, c2: INTEGER): BOOLEAN
 		require
 			consistent_row_numbers:
 				current.number_of_rows=other.number_of_rows
@@ -276,7 +272,7 @@ feature -- Auxiliary Queries
 				across
 					1 |..| number_of_columns as n
 				loop
-					if	(n.item < c1 or n.item > c2) or (m.item < r1 or m.item > r2)
+					if (n.item < c1 or n.item > c2) or (m.item < r1 or m.item > r2)
 					then
 						Result:= Current.status_of (n.item, m.item) ~ other.status_of (n.item, m.item)
 				end
@@ -290,7 +286,8 @@ feature -- Auxiliary Queries
 					across
 						1 |..| number_of_columns as j
 					all
-						Current.status_of (i.item,j.item) = other.status_of (i.item,j.item) or (i.item <= r2 and i.item >= r1 and j.item >= c1 and j.item <= c2 )
+						Current.status_of (i.item,j.item) ~ other.status_of (i.item,j.item)
+						or (i.item <= r2 and i.item >= r1 and j.item >= c1 and j.item <= c2)
 				end
 			end
 		end

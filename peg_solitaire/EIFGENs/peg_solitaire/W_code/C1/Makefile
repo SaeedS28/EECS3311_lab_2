@@ -40,14 +40,14 @@ SYSTEM_IN_DYNAMIC_LIB = peg_solitaire.so
 
 OBJECTS = big_file_C1_c.o 
 
-OLDOBJECTS =  ap973.o ap973d.o te979.o te979d.o go978.o go978d.o ba977.o ba977d.o \
-	te976.o te976d.o te975.o te975d.o es972.o es972d.o es974.o es974d.o \
-	ga965.o ga965d.o bo963.o bo963d.o bo964.o bo964d.o es970.o es970d.o \
-	es971.o es971d.o bo962.o bo962d.o bo961.o bo961d.o es969.o es969d.o \
-	sl959.o sl959d.o sl960.o sl960d.o sl989.o sl989d.o c_958.o c_958d.o \
-	ti984.o ti984d.o da987.o da987d.o da985.o da985d.o da988.o da988d.o \
-	ti983.o ti983d.o ti982.o ti982d.o da986.o da986d.o gr968.o gr968d.o \
-	ti981.o ti981d.o co980.o co980d.o da967.o da967d.o da966.o da966d.o 
+OLDOBJECTS =  ap974.o ap974d.o te978.o te978d.o te977.o te977d.o te976.o te976d.o \
+	es973.o es973d.o es975.o es975d.o bo963.o bo963d.o bo964.o bo964d.o \
+	ga962.o ga962d.o bo970.o bo970d.o ba971.o ba971d.o es969.o es969d.o \
+	es972.o es972d.o bo961.o bo961d.o sl988.o sl988d.o sl959.o sl959d.o \
+	sl960.o sl960d.o un989.o un989d.o es968.o es968d.o c_958.o c_958d.o \
+	ti982.o ti982d.o da983.o da983d.o ti981.o ti981d.o ti980.o ti980d.o \
+	da985.o da985d.o da986.o da986d.o co987.o co987d.o ti979.o ti979d.o \
+	gr967.o gr967d.o da984.o da984d.o da966.o da966d.o da965.o da965d.o 
 
 all: Cobj1.o
 

@@ -44,8 +44,8 @@ extern void EIF_Minit958(void);
 #endif
 
 #include <string.h>
-#include <time.h>
 #include "eif_time.h"
+#include <time.h>
 
 #ifdef __cplusplus
 extern "C" {
